@@ -378,6 +378,7 @@ analysis.
 
 \subsection{Stimuli and Procedure}
 
+\todo[inline]{rdh: this can be simplified to just describe differences from exp. 1 (i.e. a lot of procedural things are redundant here)}
 \begin{figure}
   \centering
   \includegraphics[width=0.4\textwidth]{./figures/easy-field}
@@ -485,7 +486,7 @@ experiment.
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=0.4\textwidth]{./figures/performance-summary}
+  \includegraphics[width=0.8\textwidth]{./figures/performance-summary}
   \caption{Mean performance as a function of group size in the low and
     medium noise levels.  Error bars are 95\% bootstrap confidence
     intervals using the group as the primary bootstrap unit.  All
@@ -550,6 +551,14 @@ players.  Also, since the states are not defined in terms of scores,
 we can meaningfully quantify the relationship between state and
 performance.
 
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{./figures/states}
+  \caption{The probability of an individual being in a particular
+    behavioral state as a function of the individual's score.}
+  \label{fig:states}
+\end{figure}
+
 We now define the three states: exploiting, copying, and exploring.
 Exploiting a particular location in the environment is not completely
 trivial for players since the avatars always move at least at a slow
@@ -590,13 +599,6 @@ are choosing their states relatively rationally.  Players will tend to
 remain in good areas and will leave bad areas quickly either by
 exploring independently or by copying other individuals.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.29\textwidth]{./figures/states}
-  \caption{The probability of an individual being in a particular
-    behavioral state as a function of the individual's score.}
-  \label{fig:states}
-\end{figure}
 
 Second, we find substantial variation in the types of copying behavior
 that different individuals display.  Some individuals appear to focus
@@ -615,7 +617,7 @@ these inferences to more effectively copy others.
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.5\textwidth]{./figures/copy-true-proportion}
+  \includegraphics[width=0.9\textwidth]{./figures/copy-true-proportion}
   \caption{Average group performance as a function of the fraction of
     copying in the group that consists of ``intelligent
     copying''---copying of an individual with a higher score.  Lines
