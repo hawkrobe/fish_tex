@@ -22,9 +22,10 @@ Hongbo Fang (hongbofa@andrew.cmu.edu)\thanks{Department of Computer Science, Car
 \and
 Alex ``Sandy'' Pentland (pentland@mit.edu)\thanks{MIT Media Lab}
 \and 
-Noah D. Goodman (ngoodman@stanford.edu)^$\dagger$
+Noah D. Goodman (ngoodman@stanford.edu)$^\dagger$
 \and 
-Joshua B. Tenenbaum (jbt@mit.edu)^*}
+Joshua B. Tenenbaum (jbt@mit.edu)$^*$
+}
 
 \date{}
 \begin{document}
@@ -194,15 +195,15 @@ We recruited 781 unique participants from Amazon Mechanical Turk to participate 
 
 \subsection{Stimuli}
 
-\begin{figure}
+\begin{figure}[t!]
   \centering
-  \includegraphics[width=0.3\textwidth]{./figures/experiment1_design.pdf}
+  \includegraphics[width=0.6\textwidth]{./figures/experiment1_design.pdf}
   \hspace{0.1cm}
-  \caption{Multi-agent tracking task used in Exp. 1.}
+  \caption{Example states of the multi-agent tracking task used in Exp. 1. Hidden scoring region is shown in grey. Bottom frame shows participant receiving a score upon entering the region.}
   \label{fig:score}
 \end{figure}
 
-The virtual game environment measured 480 pixels in width and 285 pixels in height. 
+The virtual game environment measured 480 pixels in width and 285 pixels in height.
 Avatars were represented by triangles that were 10 pixels in length and 5 pixels in width, rotated to the direction the avatar is facing. Players controlled their avatars by clicking and using two keyboard keys. 
 Clicking within the playing area instantly oriented the direction of the avatar to be facing the location clicked. 
 Participants could hold the "a" key to accelerate or hold down the "s" key to stop.  
@@ -234,23 +235,18 @@ The participants were informed about the dynamics of the underlying score field 
 Participants were not explicitly instructed or suggested to cooperate or coordinate with each other.
 
 After successfully completing a comprehension test, participants were then redirected to a waiting room.
-Participants would wait for up to 5 minutes or until a pre-assigned number of other players joined the game.
+For each waiting room we started, we randomly sampled a target group size between 1 and 6.
+Participants would wait for up to 5 minutes or until the pre-assigned number of other players joined.
 While in the waiting room, participants could familiarize themselves with the controls of the game.  Players were not shown any score in
 the waiting room unless the participant was against a wall, in which
-case the border of the playing region would turn red and a warning appeared on screen.  All players spent at least one minute in the waiting room to help ensure familiarity with the controls before starting the game. As in the actual game, participants in the
-waiting room would be removed for inactivity if the player's browser
-was active in another tab for more than 30 seconds total throughout the game or if the player's
-avatar was unmoving against a wall for 30 consecutive seconds.  We also removed
-players if their ping response latencies were greater than 125ms for
-more than 75 seconds in total throughout the game.  We paid participants 75 cents for completing our
-instructions and comprehension checks, and the participants could receive a bonus of up to
-\$1.25 during the five minutes of gameplay. Each point in the game corresponded to \$0.01 of bonus. Each participant was also paid 15 cents
-per minute for any time spent in the waiting room, minus any time that
-player spent against a wall.  These numbers were chosen so that the
-participants were expected to receive at least a wage of \$9 per hour for the totality of their time active in the
+case the border of the playing region would turn red and a warning appeared on screen.  All players spent at least one minute in the waiting room to help ensure familiarity with the controls before starting the game. 
+
+Both in the waiting room and the actual game, were removed for inactivity if we detected that they had switched to another browser tab for more than 30 seconds total throughout the game or if the player's avatar was unmoving against a wall for 30 consecutive seconds.  
+We also removed players if their ping response latencies were greater than 125ms for more than 75 seconds in total throughout the game.  
+We paid participants 75 cents for completing our instructions and comprehension checks, and the participants could receive a bonus of up to \$1.25 during the five minutes of gameplay. Each point in the game corresponded to \$0.01 of bonus. Each participant was also paid 15 cents per minute for any time spent in the waiting room, minus any time that player spent against a wall.  These numbers were chosen so that the participants were expected to receive at least a wage of \$9 per hour for the totality of their time active in the
 experiment.
 
-\todo[inline]{rdh: need to describe how we handled participant disconnects/removals (i.e. allowed the smaller group to continue) and how we assigned group sizes, e.g. were group sizes sampled randomly?}
+\todo[inline]{rdh: need to describe how we handled participant disconnects/removals (i.e. allowed the smaller group to continue)? Also, need to refer to Fig. 1 in text, and to the supplemental Fig with actual screenshots.}
 We implemented this experiment using the MWERT framework \cite{hawkins_conducting_2014}, which uses a stack of recent web technologies capable of handling the challenges of real-time, multi-player web experiments, including Node.js, the Socket.io module, and HTML5 canvases.  
 % Since MWERT was originally used
 % for two-player games, we had to extend the MWERT framework in several
@@ -260,7 +256,7 @@ We implemented this experiment using the MWERT framework \cite{hawkins_conductin
 \begin{figure}[t!]
   \centering
   \includegraphics[width=0.8\textwidth]{./figures/exp1_combined.pdf}
-  \caption{(A) Mean performance of human participants as a function of group size in Experiment 1.  Error bars are 95\% bootstrap confidence intervals using the group as the primary bootstrap unit.  All points are averages over at least two groups. (B) Mean performance of groups of fish, reproduced with permission from \citeA{berdahl_emergent_2013}. There was no improvement in the respective small-group regime, highlighted in grey.}
+  \caption{(A) Mean performance of human participants as a function of group size in Experiment 1.  Error bars are 95\% bootstrap confidence intervals using the group as the primary bootstrap unit.  All points are averages over at least two groups. (B) Mean performance of groups of fish, reproduced with permission from Berdahl et al (2013). There was no improvement in the respective small-group regime, highlighted in grey.}
   \label{fig:exp1_performance}
 \end{figure}
 
@@ -324,7 +320,7 @@ To analyze our data from this experiment we use a mixed methods analysis involvi
 
 \subsubsection{Qualitative Coding Results}
 
-\begin{figure}
+\begin{figure}[t!]
     \centering
     \includegraphics[width=0.9\linewidth]{figures/coding.pdf}
     \caption{Distribution of ratings for three qualitative behavioral properties that were coded from videos. Participants displayed relatively high levels of selective copying behavior and independent exploration, while eager copying is less common.}
@@ -384,13 +380,13 @@ analysis.
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.21\textwidth]{./figures/easy-field}
+  \includegraphics[width=0.4\textwidth]{./figures/easy-field}
   \hspace{0.1cm}
-  \includegraphics[width=0.21\textwidth]{./figures/medium-field}
+  \includegraphics[width=0.4\textwidth]{./figures/medium-field}
   \caption{Example score fields from the low noise (left) and medium
     noise (right) conditions at particular points in time.  Red areas
     indicate higher scoring areas.}
-  \label{fig:score}
+  \label{fig:score_exp3}
 \end{figure}
 
 
@@ -409,7 +405,7 @@ We manipulated the weighting between the noise field and the spotlight
 to generate different task conditions.  We used two weight values,
 corresponding to the ``low'' and ``medium'' noise levels reported by
 Berdahl et al.  Examples of score fields are shown in Figure
-\ref{fig:score}.  113 individuals (63 groups) were assigned to the low
+\ref{fig:score_exp3}.  113 individuals (63 groups) were assigned to the low
 noise condition and 324 individuals (161 groups) were assigned to the
 medium noise condition.  To decrease variability and increase
 statistical power, we generated only four distinct score fields per
@@ -428,7 +424,7 @@ obtaining or the scores at any other locations besides their own.
 However, the positions, directions, and speeds of all other players
 were visible to each player.  All of this information was updated in
 real-time every eighth of a second.  A screenshot of the interface we
-used for the game is shown in Figure \ref{fig:interface}.
+used for the game is shown in Figure \ref{fig:exp3_interface}.
 %To model the capabilities that fish were presumed by Berdahl et al. to
 %have in their environment, we restricted participants to only being
 %able to observe the scores at the particular locations in the game
@@ -452,15 +448,6 @@ speeds that Berdahl et al. reported observing in their fish, and we
 also matched the playing area dimensions and game duration to the
 parameters of their experiments.  Each participant played in a single
 continuous game lasting for 6 minutes.
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{./figures/interface}
-  \caption{A screenshot of the interface that participants saw.  The
-    score displayed corresponds to the value of the score field at the
-    location that the player's avatar is occupying.}
-  \label{fig:interface}
-\end{figure}
 
 
 After agreeing to participate in our experiment, participants were
@@ -841,14 +828,6 @@ is shown in Figure \ref{fig:example}.
 \end{figure*}
 
 
-
-\end{document}
-
-
-
-
-
-
 \begin{figure}
   \centering
   \includegraphics[width=0.3\textwidth]{./figures/experiment-3-no-score}
@@ -858,3 +837,15 @@ is shown in Figure \ref{fig:example}.
   \caption{Examples of Experiment 1 interface.}
   \label{fig:supplemental_interface}
 \end{figure}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\textwidth]{./figures/interface}
+  \caption{Screenshots of the Experiment 3 interface.  The
+    score displayed corresponds to the value of the score field at the
+    location that the player's avatar is occupying.}
+  \label{fig:exp3_interface}
+\end{figure}
+
+\end{document}
