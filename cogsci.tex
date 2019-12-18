@@ -190,12 +190,7 @@ Prior to "throwing people in the deep end" as it were, we first conducted two si
 \section{Experiment 1: Collective sensing across group sizes}
 
 \subsection{Participants}
-We recruited 781 unique participants from Amazon Mechanical Turk to
-participate in this experiment.  All participants were from the United
-States.  After excluding 52 participants due to inactivity or latency,
-and 9 others for disconnecting in the first half of the game, we were
-left with usable data from 720 participants in 312 groups.  These
-groups ranged in size from one to six individuals. 
+We recruited 781 unique participants from Amazon Mechanical Turk to participate in this experiment.  All participants were from the United States.  After excluding 52 participants due to inactivity or latency, and 9 others for disconnecting in the first half of the game, we were left with usable data from 720 participants in 312 groups.  These groups ranged in size from one to six individuals. 
 
 \subsection{Stimuli}
 
@@ -212,46 +207,40 @@ groups ranged in size from one to six individuals.
   \label{fig:score}
 \end{figure}
 
+The virtual game environment measured 480 pixels in width and 285 pixels in height. 
+Avatars were represented by triangles that were 10 pixels in length and 5 pixels in width, rotated to the direction the avatar is facing. Players controlled their avatars by clicking and using two keyboard keys. 
+Clicking within the playing area instantly oriented the direction of the avatar to be facing the location clicked. 
+Participants could hold the "a" key to accelerate or hold down the "s" key to stop.  
+The avatars automatically moved forward at a constant velocity of 17 pixels per second if no buttons were pressed, but instantaneously increased to a constant velocity of 57 pixels per second for the duration of time that the ``a" key was held down and decreased to 0 pixels per second for the duration of time the "s" key was held down. 
 
-The game scores of the participants in our experiments were determined
-by underlying ``score fields''.  These score fields consisted of $480
-\times 285$ arrays of score values for each 125ms time interval in our
-game.  We created these score fields using a simple process.  We first
-generated a circular scoring region of 50 pixels at a random location on the playing area. This circle then traversed in straight lines to randomly chosen
-next locations within the playing area at a speed of 136 pixels per second.
-To decrease variability and increase
-statistical power, we generated only four distinct score fields per
-noise level, so multiple groups experienced the same fields.  To
-discourage inactivity, players were awarded a score of zero,
-corresponding to zero bonus, if their avatars were touching a wall.
+We designed the participant interface as a multi-agent tracking environment.
+The score that agents obtained at each location at each point in time was determined by an underlying ``score field.'' 
+This field was hidden from participants, who  only had access to the score at their current location. 
+We generated score fields by first initializing a circular region with a diameter of 50 pixels at a random location on the playing area. 
+Inside this region, the score was set to 1.
+Outside this region, the score was set to 0.
+We then moved this region along a straight line to a randomly chosen target location within the playing area at a speed of 17 pixels per second.
+Once it reached this location, we selected another target location, and repeated the process for the duration of the experiment.
+We pre-generated 5 such score fields, so multiple groups were randomly assigned to the same underlying field.  
 
-We designed the participant interface to be a kind of multiagent tracking environment. The underlying score field was kept hidden from
-participants, and instead the participants could only detect when
-they were within the circular scoring region. When within the moving circular region, the participant avatar was surrounded on their screen by a sparkling star and the border of the playing area turned yellow. The sparkling star was only visible to the participant controlling that avator. Participants \emph{not} directly observe whether other players were in the scoring region.
+Because these simple score fields were binary (i.e. either inside or outside the circular scoring region), we showed participants binary feedback about their current score.
+When an avatar entered the circular region, it was surrounded by a salient sparkling star and the border of the playing area turned green. 
+Critically, this feedback was only visible to the participant controlling that avatar; participants did \emph{not} directly observe whether other players were in the scoring region.
 
-Players controlled their avatars by clicking and using two keyboard keys. Clicking within the playing area instantly oriented the direction
-of the avatar to be facing the location clicked. Participants could hold the
-"a" key to accelerate or hold down the "s" key to stop.  The avatars automatically moved forward at a
-constant velocity of 136 pixels per second whenever neither the "a" key nor the "s" key was
-not depressed.  The avatars instantaneously increased to a constant
-velocity of 456 pixels per second for the duration of time that the
-"a" key was held down, and instantaneously decreased to no velocity or 0 pixels per second for the duration of time the "s" key was held down. Each participant played in a single
-continuous game lasting for 5 minutes. Participants 1/400 point for each second active in the game (not against a wall) and an additional 1/600 point per second whenever in the scoring region.
-
+Each participant played in a single
+continuous game lasting for 5 minutes, and locations were updated every 125 milliseconds. 
+To discourage inactivity, participants also received 2/3 of a point for each second they were actively participating in the game.
+For any moment when an avatar was touching a wall, we displayed a large warning message and set the player's current score to zero so that they stopped accumulating points.
 
 \subsection{Procedure}
 
-After agreeing to participate in our experiment, participants were
-presented with a set of instructions.  These instructions simply
-described the mechanics of the game, framing the game as searching for the "magical bonus region".  The participants were
-informed about the dynamics of the underlying score fields.  The  were also informed "There is no competition between players; the magical region is not consumed by players. It simply changes location over time." Participants were not explicitly instructed or suggested to cooperate or coordinate with each other.
+After agreeing to participate in our experiment, participants were presented with a set of instructions describing the mechanics of the game, using a cover story framing the game as a search for the "magical bonus region".  
+The participants were informed about the dynamics of the underlying score field and also explicitly informed that ``There is no competition between players; the magical region is not consumed by players. It simply changes location over time." 
+Participants were not explicitly instructed or suggested to cooperate or coordinate with each other.
 
-After successfully completing a
-comprehension test, participants were then redirected to a waiting
-room.  In the waiting room participants would wait for up to 5 minutes
-or until a pre-assigned number of other players joined the game.
-While in the waiting room, participants could familiarize themselves
-with the controls of the game.  Players were not shown any score in
+After successfully completing a comprehension test, participants were then redirected to a waiting room.
+Participants would wait for up to 5 minutes or until a pre-assigned number of other players joined the game.
+While in the waiting room, participants could familiarize themselves with the controls of the game.  Players were not shown any score in
 the waiting room unless the participant was against a wall, in which
 case the border of the playing region would turn red and a warning appeared on screen.  All players spent at least one minute in the waiting room to help ensure familiarity with the controls before starting the game. As in the actual game, participants in the
 waiting room would be removed for inactivity if the player's browser
@@ -260,20 +249,18 @@ avatar was unmoving against a wall for 30 consecutive seconds.  We also removed
 players if their ping response latencies were greater than 125ms for
 more than 75 seconds in total throughout the game.  We paid participants 75 cents for completing our
 instructions and comprehension checks, and the participants could receive a bonus of up to
-\$1.25 during the five minutes of gameplay. Each point in the game corresponds to \$0.01 of bonus. Each participant was also paid 15 cents
+\$1.25 during the five minutes of gameplay. Each point in the game corresponded to \$0.01 of bonus. Each participant was also paid 15 cents
 per minute for any time spent in the waiting room, minus any time that
 player spent against a wall.  These numbers were chosen so that the
 participants were expected to receive at least a wage of \$9 per hour for the totality of their time active in the
 experiment.
 
-We implemented this experiment using the MWERT framework
-\cite{hawkins_conducting_2014}.  The MWERT framework uses a set of
-recent web technologies capable of handling the challenges of
-real-time, multi-player web experiments, including Node.js, the
-Socket.io module, and HTML5 canvases.  Since MWERT was originally used
-for two-player games, we had to extend the MWERT framework in several
-ways to handle the challenges posed by hosting larger groups of
-players.
+\todo[inline]{rdh: need to describe how we handled participant disconnects/removals (i.e. allowed the smaller group to continue) and how we assigned group sizes, e.g. were group sizes sampled randomly?}
+We implemented this experiment using the MWERT framework \cite{hawkins_conducting_2014}, which uses a stack of recent web technologies capable of handling the challenges of real-time, multi-player web experiments, including Node.js, the Socket.io module, and HTML5 canvases.  
+% Since MWERT was originally used
+% for two-player games, we had to extend the MWERT framework in several
+% ways to handle the challenges posed by hosting larger groups of
+% players.
 
 \begin{figure}[t!]
   \centering
