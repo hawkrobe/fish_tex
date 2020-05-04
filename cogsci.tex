@@ -174,7 +174,7 @@ Each location corresponded to a hidden score value that fluctuated over time.
 They could continually observe the movements of other agents but only had access to the score at their own current location. 
 Across three experiments, we used this virtual environment to investigate how the performance of groups changed as a function of group size (Experiment 1), evaluate the individual social learning mechanisms driving collective success (Experiment 2), and measure the effect of noise on social learning (Experiment 3).
 We find that participants were able to preferentially copy agents who are in higher-scoring regions based solely on observable behavioral signatures of `exploiting', even as these signatures differed across experiments (`stopping' or `slowing' in the first two experiments, and `spinning' in the third). 
-Furthermore, during times when no agents in the group were displaying these behaviors, or when the environment was too noisy, we found that participants preferred to independently explore the environment rather than indiscriminately copy.
+Furthermore, during times when no agents in the group were displaying these behaviors, we found that participants preferred to independently explore the environment rather than indiscriminately copy.
 Taken together, this work suggests that even in novel environments where the payoff information of other agents is not directly accessible, individual social cognition may nonetheless enable robust social learning. 
 
 %\section{Related Work}
@@ -300,25 +300,21 @@ However, we also found a significant interaction with group size: while performa
 
 \section{Experiment 2: Evaluating copying strategies}
 
-What cognitive mechanisms allowed humans in Experiment 1 to benefit from collective intelligence even in relatively small groups?
+What cognitive mechanisms allowed humans in Experiment 1 to benefit from collective intelligence even when the payoff information of other agents is not directly accessible?
 We hypothesized that human behavior in this environment is driven by two underlying strategies: (1) independent exploration and (2) precise, targeted copying based on social inferences about success. 
 These hypothesized strategies rely on cognitive mechanisms allowing humans to infer ``who knows'' about high-scoring locations based on outward behavioral traces (e.g. slowing down or stopping in a region) and also to inhibit social influence to act independently when appropriate.
 
 The design of Experiment 1 made it challenging to disentangle these strategies.
-For example, we were interested in analyzing participant clicks to detect signatures of selective copying, but because there was a single `spotlight', the strategies were confounded: players who were already obtaining reward and trying to stay inside the spotlight were, by necessity, clicking close to other players who were obtaining reward, even if they were not intentionally copying them.
-For our second set of experiments, then, we designed a sequence of controlled scenarios that would be more diagnostic for testing the use of these different strategies.
-We placed participants into an environment with only artificial agents, not other humans, and we manipulated the location of the score field to estimate the probability of spontaneously copying different agents under different conditions.
+For example, we were interested in analyzing participant clicks to detect signatures of selective copying, but because there was a unique `spotlight' at each point in time, different copying strategies were confounded: players who were already obtaining reward and trying to stay inside the spotlight were, by necessity, clicking close to other players who were obtaining reward, even if they were not intentionally copying them.
+For our second set of experiments, then, we designed a sequence of controlled scenarios that are more diagnostic for testing the use of these different strategies.
+We placed participants into an environment with artificial agents that we designed, rather than other humans, and we manipulated the location of the score field to estimate the probability of copying different agents under different conditions.
 
-We analyzed the flexibility of copying by decomposing participant behavior into exploring, exploiting, and copying states \cite<e.g.>{rendell_why_2010}.  
-We define exploiting as selecting an action that has an expected good outcome given the agent's knowledge of the environment. 
-We define exploring behavior as selecting an action that has an unknown outcome. 
-We define copying as moving toward the location of another agent. 
-Our hypotheses about social inference can be re-framed as flexibility in the deployment of these states.
-For example, one copy-when-uncertain strategy could be described by only the exploiting and copying behaviors, with agents never engaged in their own independent exploration. 
-And a copy-the-most-successful heuristic is an agent who selectively copies exploiting agents if any exist and can be identified.
-In this environment, exploiting, exploring, and copying behavior were associated with quite recognizable movements, which allows us to easily test models of social learning.  Exploiting behavior in this environment looks like a participant trying to stay close to a particular location or path. Copying behavior is indicated by forward motion, often accelerated motion, towards other agents in the environment. Exploring behavior is indicated by movement that is not well explained as either exploring or copying. 
-
-% In this environment, exploiting, exploring, and copying behavior were associated with quite recognizable movements, which allows us to easily test models of social learning.  Exploiting behavior in this environment looks like a participant trying to stay close to a particular location or path. Copying behavior is indicated by forward motion, often accelerated motion, towards other agents in the environment. Exploring behavior is indicated by movement that is not well explained as either exploring or copying. 
+For conceptual clarity about our design and analysis, it is helpful to define three broad `states': exploring, exploiting, and copying \cite<e.g.>{rendell_why_2010}.
+We define \emph{exploiting} as selecting an action that maximizes the expected score given the agent's current knowledge of the environment, i.e. staying close to a known location of the spotlight. 
+We define \emph{copying} as forward motion, sometimes accelerated, toward the location of another agent. 
+We define \emph{exploring} as selecting an action that has an unknown outcome, often moving to a region. 
+In this environment, exploiting, exploring, and copying behavior were associated with distinct and recognizable movements.
+Our hypotheses
 
 \subsection{Methods}
 \subsubsection{Participants}
@@ -353,11 +349,11 @@ Each of these rounds was further divided into three conditions, where we causall
 
 For the baseline \textit{blank score field} condition, there was no score field. During these times, all the bots were randomly exploring, with two randomly exploring along walls (in association with the wall score field dynamic) and two exploring the center region (associated with the random walk score field dynamic). 
 
-\todo[inline]{Make little schematic of the timeline of the game, showing the windows of intervention.}
+\todo[inline]{Make little schematic of the timeline of the game, showing the windows of intervention?}
 At the ten second mark and the forty second mark in each round, we introduced the two high scoring regions into the game (see Fig. \ref{fig:exp2_design}).
-In the \textit{targeted score field} condition, we superimposed the wall-following and random-walk score field patterns to create a bi-modal dynamic score field. 
+In the \textit{distant intervention} condition, we superimposed the wall-following and random-walk score field patterns to create a bi-modal dynamic score field. 
 We centered one high scoring region on a wall-following bot and one high scoring region on a bot in the center region. 
-In the \textit{localized score field} condition, we centered the high scoring region on the participant, wherever they were. In this condition, they automatically received a high score for roughly the ten second duration that the high scoring regions were present.
+In the \textit{localized intervention} condition, however, we centered the high scoring region on the \emph{participant}, wherever they were. In this condition, they automatically received a high score for roughly the ten second duration that the high scoring regions were present.
 We randomized these two interventions to the two windows across participants. 
 
 In the non-social round, we simulated the same bots, so that the distribution of score field positions was the same across the two conditions. (The bots were not responsive to the participants behavior, only to each other.) The bot behavior was programmed according to a selective copying model. These bots explore non-socially when no bots are exploiting, and copy exploiting bots when there are any. The two bots along the wall always stayed along the wall, with any copying bot choosing to copy the wall exploiting wall bot, and the bots exploring in the entire playing region also only paid attention to each other in an analogous way.
@@ -406,7 +402,7 @@ The endpoints of the scale roughly represented the proportion of time the partic
 
 The two authors achieved a correlation of $r = 0.75$ for selectivity, $r = 0.55$ for eagerness, and $r = 0.60$ for independence. We resolved disagreements in our codes by averaging. 
 First, we found that a substantial fraction of participants display selective copying behavior and independence (Fig. \ref{fig:selective}). 
-\todo[inline]{rdh: Is it appropriate to use 0.5 as a binary threshold? Do we think that midpoint is meaningful, since even lower numbers, e.g. 0.2, were indicative of some level of these signatures?}
+\todo[inline]{rdh: Is it appropriate to use 0.5 as the null threshold? Do we think that midpoint is meaningful, since even lower numbers, e.g. 0.2, were indicative of some level of these signatures? Maybe should be comparing to a null of 0?}
 We found that 71\% of participants had an average selectivity rating of at least 0.5, and 86\% had an average independence rating above that level. 
 These proportions were significantly greater than 50\% using a two-sided binomial test, $p = 0.036$ and $p = 0.001$, respectively.  
 In comparison, only 1 participant (4\%) was coded as eager at that level, which was significantly less than 50\%, $p < 0.001$.
@@ -434,9 +430,7 @@ We found a significant interaction, $b = 51.9, t = 4.5, p < 0.001$, showing a st
 
 \section{Experiment 3: Generalizing to more complex environments}
 
-
-
-To generalize our understanding of these mechanisms in more complex environments, and to more explicitly compare our findings to the nonhuman animal literature, we conducted a final experiment using the materials designed by \citeA{berdahl_emergent_2013} to examine collective sensing in fish.
+To generalize our understanding of these mechanisms to more complex environments, and to more explicitly compare our findings to the nonhuman animal literature, we conducted a final experiment using the materials designed by \citeA{berdahl_emergent_2013} to examine collective sensing in fish.
 These environments are significantly more complex than the binary spotlight and border environments we used in Experiments 1 and 2.
 They require agents to use continuous gradients to navigate noisy and fluctuating score fields.
 We manipulated the level of noise across different groups, predicting that the cognitive mechanisms discussed in the previous sections would be less reliable under noisier conditions. To test that our results from Experiment 1 also generalize further, we also modified many aspects of the experiment interface.
