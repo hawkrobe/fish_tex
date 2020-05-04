@@ -35,19 +35,44 @@ Joshua B. Tenenbaum (jbt@mit.edu)$^*$
 
 \begin{abstract}
 
-Groups of agents are capable of solving problems that no individual can solve in isolation. 
-While intelligent behavior emerges only at large group sizes for many nonhuman species (e.g. fish or insects), humans rapidly benefit from social interaction even in small teams. 
-In this paper, we take a comparative approach to identity candidate  mechanisms of social cognition that may account for distinctively human forms of collective intelligence. 
+%Copying successful individuals can be a highly effective way to improve your lot when you're lost in the weeds.
+
+
+%People are able to copy successful individuals even when success is not readily observable. 
+
+%At the same time, success is not always readily observable.
+
+%While this strategy would seem to be rendered difficult when success is not readily observable, .
+
+%What cognitive abilities enable people to succeed at identifying successful individuals to copy even in such cases when success is obscured or ambiguous.
+
+%Here we argue that flexible agent-reasoning abilities underlie participants' abilities to selectively copy successful individuals in an environment where success can only be inferred from behavior.
+
+
+
+
+%The study of behavioral mechanisms of collective intelligence general regards either rules of thumb or more sophisticated inferential mechanisms that enable 
+
+%Many studies of collective intelligence have documented mechanisms 
+%Some have   
+
+%Collective intelligence is the study of 
+Groups of agents are capable of solving problems that no individual can solve alone. 
+A variety of simple individual strategies have been proposed to explain such collective intelligence in both humans and non-human animals, such as copying successful individuals or copying when uncertain. 
+Yet the cognitive mechanisms supporting these strategies remain under-specified.
+Here, we suggest that social reasoning may play an important role allowing latent properties like ``success'' to be flexibly inferred from outward behavior, such that social learning can be balanced with exploration. 
+%While intelligent behavior emerges only at large group sizes for many nonhuman species (e.g. fish or insects), humans rapidly benefit from social interaction even in small teams. 
+%In this paper, we take a comparative approach to identify candidate  mechanisms of social cognition that may account for distinctively human forms of collective intelligence. 
 %While a variety of simple mechanisms have been proposed to account for 
 %Despite its importance, human collective intelligence remains enigmatic.  
 %We know what features are predictive of collective intelligence in human groups, but we do not understand the specific mechanisms that lead to the emergence of this distributed information processing ability. 
 %In contrast, there is a well-developed literature of experiments that have exposed the mechanisms of collective intelligence in nonhuman animal species.
-In Experiment 1, we designed a collective search paradigm inspired by the nonhuman animal literature and found that performance quickly improves as a function of group size for groups of up to six human participants.
-%in order to better understand the mechanisms that may underlie the emergence of collective intelligence in human groups.  
-In Experiment 2, we placed human participants in scenarios with artificial agents that were constructed to expose the role of two candidate mechanisms: independent exploration and targeted copying based on social inferences about who is currently successful. 
+In Experiment 1, we designed a collective search paradigm for human participants, inspired by the nonhuman animal literature, and found that performance quickly improves as a function of group size. 
+%for groups of up to six human participants.
+In Experiment 2, we placed human participants in scenarios with artificial agents that were explicitly constructed to evaluate the role of two mechanisms: independent exploration and targeted copying based on social inferences about who is currently successful. 
 %We further validated our experimental results by implementing these mechanisms in a computational model: a simulated agent equipped with these mechanisms explained human performance better than models relying on other simple heuristics that have been proposed for nonhuman animals.
-Finally, in Experiment 3, we generalize our results to a more complex and noisy environment. 
-In sum, even the most rudimentary mechanisms of human social cognition may allow us to derive the benefits of collective intelligence in smaller groups and over shorter timescales than nonhuman animals.
+Finally, in Experiment 3, we generalize these results to groups in a more complex and noisy environment.
+Taken together, we find that even the most rudimentary mechanisms of human social cognition may allow for more robust and flexible use of social learning strategies.
 
 \textbf{Keywords:}
   collective intelligence; distributed cognition;
@@ -56,97 +81,101 @@ In sum, even the most rudimentary mechanisms of human social cognition may allow
 
 \section{Introduction}
 
-% Paragraph 1: set up the idea of collective intelligence (i.e. motivating why people would care about the secondary question of the individual cognitive mechanisms undelrying it) and then pose the problem of what makes human CI different) i.e. point out that there seems to be not just differences in the scale of these successes (e.g. cumulative human culture) but also the group sizes and timescales at which benefits begin to emerge, so there may be different processes at play. then pose question about what allows this uniquely human style of collective intelligence to get off the ground.
+%Social learning enable culture. allows things to be cumulative. it's important!
+
+%Learn to preferentially copy successful individuals even when success must be inferred.
+
+%in the animal literature, socila learning mechanisms have mostly bee studied as these strategies
+
+%here are vatrious mechanisms tha thave been proposed
+%these mechanismstic account have succesfully provided finew-groaunded analysical, explained collecitv ebavhior in a lot of caase. these stratgeies also cna mostly be explained by through behavioral associative learning (andrew social foraging ref)
+
+%in parallel to all this, there has been a bunch of social cognition work about the way people make inference. there has bene a lot of work in social learning in cogsci, but mostly isn;t used ot explain big emergenyt things. mostly local
+
+
+%tehre has been stuff about cognitive abilities predicting ermgey things, but this is generally about measuring things about individual that you can predict things tfrom rather than interactive mechanisms.
+
+
+%in the present work, we aim ot ground the emergeny thing in the more immedaiate, cognitively orienteg mechanisms.
+
+%in the cases where models are used in human collective intelligence, the models tend to be the same as animal behavior litearutre, in that reward is modeled as visible. not so much social inferece mechanisms. 
+
+
+%meanwhile the cognitve sciene litatrure,a whic has also been interested in social learnk ,has tended ot think of things less as sttrategyie sand more as cognitive abilitesy---inferences that agents can make, theory of mind 
+
+%gap: what if the actual reward is hidden. then what?
+
+%all this social inference stuff is about latent properties of 
+
+%infering prferences, goal, beliefs and desires. things you can't just read off someone's face
+
+%look at a social foraging like task
+
+%but without being able to actually observe what the rewards are there
+
+%copy the successful. it's just so obvious! what if you don't know who is successful
+
+%we know copy successful, but what happens when you don't have direct access to success. 
+
+%its unknow how distirbuted searhc might work in humans where there is potential for more soiphisticated individual mechanisms. 
+
+%what are the two or three main reuslts?
+
+%people can do collective searhc, increas in gropu size
+
+%use agent reasoning
+
+%uniquely suited to this 
+
+%associatve 
+
+
+
+% Paragraph 1: set up the idea of collective intelligence (i.e. motivating why people would care about the secondary question of the individual cognitive mechanisms underlying it) and then pose the problem of what makes human CI different) i.e. point out that there seems to be not just differences in the scale of these successes (e.g. cumulative human culture) but also the group sizes and timescales at which benefits begin to emerge, so there may be different processes at play. then pose question about what allows this uniquely human style of collective intelligence to get off the ground.
 From ant colonies to basketball teams, groups of agents are able to accomplish feats of intelligence beyond the reach of any individual.
-Groups are not only able to distribute complex computations across agents more efficiently (cite?), but also gain access to new emergent mechanisms. 
-When agents can observe and learn from one another, solutions can be transmitted; agents no longer need to independently obtain all of their information from direct experience with the world.
-While collective intelligence is ubiquitous across different species, however, the successes of human culture appear to be distinctive in several ways, suggesting that human collective intelligence may depend on fundamentally different mechanisms \cite{tomasello_natural_2014, henrich2017secret, laland2017darwin}.
-Here we explore the idea that one clue to these mechanisms may be found in the \emph{group size} at which the benefits of collective intelligence begin to emerge.
+Groups are not only able to distribute complex computations across agents more effectively \cite{hutchins_cognition_1995} --- new emergent processes arise from interactions between agents. 
+When agents can observe and learn from one another, they no longer need to independently obtain all of their information from direct experience with the world. 
+Social learning thus allows the group as a whole to cumulatively build on individual successes, and is considered to be a key process driving collective intelligence \cite{boyd2011cultural,tomasello_natural_2014,  laland2017darwin}. % henrich2017secret,
+%Here we explore the idea that one clue to these mechanisms may be found in the \emph{group size} at which the benefits of collective intelligence begin to emerge.
 
-While much work in social learning has focused on what rules or heuristic mechanisms underlie collective intelligence, cognitive scientists have shifted the questions towards what cognitive abilities are needed to deploy the rules that do yield collective intelligence.  Some heuristics involve metacognitive analysis, such as copy-when-uncertain. Other heuristic involve social reasoning, such as copy-the-most-successful or prestige bias.  In the present work we connect this literature on heuristics for social learning and cumulative cultural evolution, which often focus on swarm-like or "mean-field" collective intelligence of very large groups, which have focused less on cognitive abilities, with the key collective intelligence literature from organization science focused on factors explaining collective intelligence in small groups, which have focused more on cognitive abilities.
+A large body of work in human and non-human animals has focused on what strategies, or heuristics, allow social learning to be effective \cite{laland_social_2004,hoppitt2013social,RendellFogarty___Laland11_CognitiveCulture}. 
+Indiscriminate copying, for example, is not an effective strategy. 
+As more individuals rely on imitation, rather than independent asocial learning, it becomes increasingly likely that a random target of copying is using outdated or inaccurate information, decreasing the mean fitness of the group \cite{rogers_does_1988}.
+For the group to benefit from social learning, it must be deployed selectively \cite{kameda2003does,boyd1995does,kendal2005trade}, both in choosing the appropriate time to learn from others (\emph{when} strategies) and choosing the appropriate individuals to learn from (\emph{who} strategies). 
+For example, a ``copy-when-uncertain'' heuristic allows an agent to deploy social learning only when independent exploration becomes challenging, or a ``copy-successful-individuals'' heuristic allows an agent to filter out low-quality social information and target other agents most likely to increase their own fitness.
 
-Researchers in organization science have identified the metacognitive agent reasoning abilities, in particular theory of mind, as a key predictive factor of collective intelligence in small groups performing collaborative work.  Here, we ask how agent reasoning abilities are important to heuristic social learning mechanisms of collective intelligence.  With an eye towards comparing human collective intelligence to non-human animal collective intelligence, we seek to answer this question in the context of an empirical domain where as near as possible direct comparison is rendered feasible.  Most empirical work mechanisms of social learning for collective intelligence in non-human animal species has been conducted with fish and social insects.
+Attention has increasingly turned from documenting evidence for individual heuristics to investigating the mechanisms underlying the flexible use of different strategies \cite{heyes2016blackboxing,kendal2018social}. 
+Agents often use hybrid strategies, combining multiple sources of \emph{who} or \emph{when} information, or deploy different strategies in different contexts \cite{mcelreath_beyond_2008}.
+Thus, it may be useful to view social learning behavior not as the application of an inventory of simple copying rules, but as arising from deeper cognitive mechanisms.
+Especially in the case of humans, and some non-human primates, there has been substantial interest in the extent to which social learning relies on mechanisms like meta-cognition \cite{heyes2016knows} or theory of mind \cite{shafto2012learning} that go beyond pure associative learning \cite{behrens2008associative,heyes_whats_2012,heyes2012simple}.
+These proposed mechanisms allow agents to maintain explicit representations of ``who knows'' and thus concentrate social learning on particularly knowledgeable individuals.
+Similar cognitive mechanisms have been implicated in organization science as predictors of collective intelligence in small groups \cite{woolley2010evidence,engel2014reading}.
 
-%A distinctive component of human civilization compared to the rest of the animal kingdom is that we have a human civilization at all. This observation has motivated a great deal of work in the fields of collective intelligence, social learning, and evolutionary biology. What makes human collective intelligence distinct compared to the collective intelligence displayed by other animal species?
+We suggest that these social inference mechanisms may also help shed light on a puzzle raised by \emph{who} heuristics like ``copy-successful-individuals.''
+Computational simulations \cite<e.g.>{schlag1998imitate,lazer2007network,rendell_why_2010} and human experiments \cite{mason2008propagation,mesoudi2008experimental,mason2012collaborative} typically provide agents the ability to directly observe the underlying payoffs of different agents (sometimes at a cost).
+However, many real-world environments do not provide such direct access. 
+Indeed, hiding payoffs can reverse the benefits of selective copying because the solutions of different agents cannot be compared \cite{wisdom_social_2013}.
+Accounts of selective copying that rely information about who is successful or knowledgeable must also provide an account of how agents \emph{come to know} this information.
+While it is possible that associative learning allows agents to adopt particular external cues as proxies (e.g. visible health or wealth), social inference mechanisms may provide a more flexible alternative. 
+Humans continually move between different contexts where success manifests in different observable behaviors: a reliable cue of success in one environment may not be reliable in another.
+By inverting a generative model of behavior \cite<e.g.>{jara2016naive,baker2017rational}, agents can make context-sensitive predictions and quickly infer the hidden success or knowledge of others.
 
+This ability has been extensively studied in cognitive science.
+Even young children are able to rapidly infer which partners are more trustworthy and knowledgeable than others, and prefer to learn from them \cite{wood2013whom,sobel2013knowledge,gweon2014sins,poulin2016developmental,harris2018cognitive,mills2016learning}, and adults can appropriately discount unreliable social information in their decision-making \cite{velez2019integrating}.
+However, this cognitive literature  has largely developed independently from work on social learning strategies in collectives.
+Previous work has suggested that inferences about underlying cues may prevent costly and erroneous cascades of behavior \cite{bikhchandani1998learning,giraldeau2002potential}, but the broader implications of social inference abilities for collective intelligence remain unclear.
 
+%Heyes recently proposed that people may still be distinctive even in these kinds of simpler swarm-like social learning contextas, arguing that people by knowing who to know create distinctive forms of social learning.  This theory echos a variety of results on collective intelligence from organization science, including on transactive memory, the importance of theory of mind in small-group collaboration, and laboratory studies showing the adaptivity of dynamic social networks.
 
-%There are of course many ways in which human reasoning and especially human social cognition are distinctive as compared to the expression of similar abilities observed in other animals.  People engage in extraordinarily complex forms of tool use, language use, and both explicit and intuitive pedagogy.
-
-%A variety of forms of social cognition have been documented in many species, such as social interactions in primates, theory of mind in crows, or teaching of tool use in dolphins, but much of the work on these advanced forms of social cognition in non-human animals focuses on interacting pairs. With a few exceptions like roving bands of apes, work on collective intelligence in non-human animals has focused on large groups and swarm intelligence such as in social insects and fish. These swarm intelligence contexts, such as searching for home or food or evading predators, afford simplistic heuristic models of collective intelligence to describe the success of the collective behavior of these species.
-
-%Heyes recently proposed that people may still be distinctive even in these kinds of simpler swarm-like social learning contexts, arguing that people by knowing who to know create distinctive forms of social learning.  This theory echos a variety of results on collective intelligence from organization science, including on transactive memory, the importance of theory of mind in small-group collaboration, and laboratory studies showing the adaptivity of dynamic social networks.
-
-Here, we aim to establish this claim through an experimental paradigm that mirrors the type of environment in which a particular species of fish have demonstrated collective intelligence. By situating people in this fish-like collective intelligence task, we can more directly as: What makes people different from fish in this context?
-
-
-
-
-
-
-
-In the present paper we harness recent technical advances in running
-real-time, networked experiments on the web
-\cite{hawkins_conducting_2014} to develop and test a model of
-collective human behavior.  We build on a recent experiment designed
-to study the collective behavior of a particular species of fish
-\cite{berdahl_emergent_2013} that is one of the clearest illustrations
-of collective intelligence in a nonhuman animal group.  In this
-previous experiment, the researchers studied a type of fish called the
-golden shiner that prefers to spend time in dark areas of the water,
-presumably to avoid predators.  Aware of this natural propensity of
-the fish, the researchers projected time-varying spatially correlated
-light fields into a fish tank.  The researchers then studied the
-effectiveness of the fish at finding the darker areas of the tank as a
-function of the number of fish participating in the task.  The
-researchers found that average group performance increased
-significantly as a function of group size, and they identified two
-simple behavioral mechanisms driving this improvement:
-%mechanism driving this improvement was a
-%collective gradient-sensing ability that emerged from two simple
-%behavioral mechanisms:
-First, individual fish tended to move more slowly in darker areas.
-Second, individual fish also tended to turn towards conspecifics.  The
-researchers argued that the combination of these mechanisms generated
-an emergent collective gradient sensing ability in groups of fish that
-had been absent in individual fish.
-
-This experiment provides a beautiful example of a higher level of
-intelligence at the group level emerging from minimal intelligence at
-the individual level.
-%for studying the emergence of group-level properties
-% collaborative distributed search in dynamic spatial environments,
-%and the mechanism they identified in the fish is a beautiful example
-%However, in this task collective sensing in fish yielded impressive group gains but seemed
-% to be
-However, while these simple mechanisms did appear to give rise to
-surprisingly effective group behavior, they only lead to substantial
-gains in performance for large groups of 50 or more fish.  In
-contrast, we expect humans in a similar task to show significant gains
-with much smaller group sizes.  In particular, we expect that humans
-should be able to make use of theory of mind, an ability to draw
-inferences about the underlying mental states of other players, to
-better utilize social information in a similar environment.
-%% Humans are known
-%% to be highly effective at learning from others, as well as balancing
-%% this so called ``social learning'' with independent exploration and
-%% exploitation of existing personal knowledge
-%% \cite<e.g.>{kameda_adaptability_2003, wisdom_social_2013}, but the
-%% collective benefits of these abilities are less well-understood.
-%% Yet while
-%% we have a good understanding of the benefits of theory of mind and
-%% social learning to individuals, it is not known what emergent
-%% collective behavior strong theory of mind affords.
-% and integrating global information across space and time.
-
-In our experiments, participants controlled avatars in a virtual world.  
-Every location in this world corresponded to a score value that changed over time, and participants were awarded bonuses proportional to their cumulative scores in the game. 
-The score of a player at a particular point in time was simply determined by the location of that player in the virtual world. 
-Our incentives for participants to achieve high scores were designed to parallel the fishes' preferences for darker areas in their environment.
-The players either played alone or in groups of varying sizes.   
-We used this virtual environment to investigate how the gradient-tracking performance of human groups changed as group size increased, and to attempt to identify behavioral mechanisms underlying collective sensing in human groups.
-
-Prior to "throwing people in the deep end" as it were, we first conducted two simpler experiments to establish baselines for human behavior in this kind of multi-agent tracking environment, and to begin to isolate the types of mechanisms that people use.  We conduct three experiments, all of which mirror the basic environment of Berdahl et al., but with the first two having some simplifications. Our first experiment uses a simplified background score field that is much less complex that the score field dynamics of Berdahl et al.  We establish in this environment an increase in performance as a function of group size, showing that human collective intelligence does emerge in this kind of domain. Our second experiment begins to isolate the kinds of mechanisms that people engage in operating within this kind of environment.  In our second experiment, we asked participants to play on their own instead of with other people, and manipulated the social stimuli through bots in the environment.  This experiment offer the first test of Heyes' proposition that knowing who to know might lead to distinctively human collectinve intelligence in these simple kinds of social learning swarm intelligence domains.  Our third experiment provides as an experimental context that gets us as close as we can to comparing to Berdahl's fish without actually putting people in water with scuba gear. 
+In the present work we bridge these two literatures by examining the behavior of human groups in a collective sensing task where others' payoffs are not directly observable.  
+This task builds on a recent task designed to study the collective behavior of groups of fish \cite{berdahl_emergent_2013}\footnote{Collective sensing is related to  collective foraging tasks \cite{dechaume2005hidden,goldstone2005knowledge},  but the ‘resource’ is not consumable so there are no competitive dynamic}.
+Human participants controlled avatars in a virtual world.
+Each location corresponded to a hidden score value that fluctuated over time.
+They could continually observe the movements of other agents but only had access to the score at their own current location. 
+Across three experiments, we used this virtual environment to investigate how the performance of groups changed as a function of group size (Experiment 1), evaluate the individual social learning mechanisms driving collective success (Experiment 2), and measure the effect of noise on social learning (Experiment 3).
+We find that participants were able to preferentially copy agents who are in higher-scoring regions based solely on observable behavioral signatures of `exploiting', even as these signatures differed across experiments (`stopping' or `slowing' in the first two experiments, and `spinning' in the third). 
+Furthermore, during times when no agents in the group were displaying these behaviors, or when the environment was too noisy, we found that participants preferred to independently explore the environment rather than indiscriminately copy.
+Taken together, this work suggests that even in novel environments where the payoff information of other agents is not directly accessible, individual social cognition may nonetheless enable robust social learning. 
 
 %\section{Related Work}
 %\todo{I've put this here for now. Could incorporate into intro instead, or move to discussion, or keep here.}
@@ -185,7 +214,7 @@ Prior to "throwing people in the deep end" as it were, we first conducted two si
 %% of nonhuman animals.
 %uniquely human attributes may lead to different outcomes
 
-%\todo[inline]{paragraph 4: finally, review some of human collective intelligence paradigms that might help answer this question (e.g. foraging, problem-solving, etc) but argue that they are limited in 2 ways: (1) hard to directly compare to the nonhuman animal literature, and (2) do not necessarily create the conditions where simpler mechanisms break down.}
+
 
 
 \section{Experiment 1: Collective sensing across group sizes}
@@ -199,19 +228,20 @@ We recruited 781 unique participants from Amazon Mechanical Turk to participate 
   \centering
   \includegraphics[width=0.6\textwidth]{./figures/experiment1_design.pdf}
   \hspace{0.1cm}
-  \caption{Example states of the multi-agent tracking task used in Exp. 1. Hidden scoring region is shown in grey. Bottom frame shows participant receiving a score upon entering the region.}
+  \caption{Example states of the multi-agent tracking task used in Exp. 1. Hidden scoring region is shown in grey, slowly drifting over time. Bottom frame shows participant receiving a bonus reward upon entering the region. The halo indicating this bonus was only visible to the player inside the region, and not to the other players.}
   \label{fig:score}
 \end{figure}
 
 The virtual game environment measured 480 pixels in width and 285 pixels in height.
-Avatars were represented by triangles that were 10 pixels in length and 5 pixels in width, rotated to the direction the avatar is facing. Players controlled their avatars by clicking and using two keyboard keys. 
+Avatars were represented by triangles that were 10 pixels in length and 5 pixels in width, rotated to the direction the avatar is facing. 
+Players controlled their avatars by clicking and using two keyboard keys. 
 Clicking within the playing area instantly oriented the direction of the avatar to be facing the location clicked. 
 Participants could hold the "a" key to accelerate or hold down the "s" key to stop.  
 The avatars automatically moved forward at a constant velocity of 17 pixels per second if no buttons were pressed, but instantaneously increased to a constant velocity of 57 pixels per second for the duration of time that the ``a" key was held down and decreased to 0 pixels per second for the duration of time the "s" key was held down. 
 
-We designed the participant interface as a multi-agent tracking environment.
+We designed the environment as a multi-agent tracking task (Fig. \ref{fig:score}).
 The score that agents obtained at each location at each point in time was determined by an underlying ``score field.'' 
-This field was hidden from participants, who  only had access to the score at their current location. 
+This field was hidden from participants, who only had access to the score at their current location. 
 We generated score fields by first initializing a circular region with a diameter of 50 pixels at a random location on the playing area. 
 Inside this region, the score was set to 1.
 Outside this region, the score was set to 0.
@@ -220,7 +250,7 @@ Once it reached this location, we selected another target location, and repeated
 We pre-generated 5 such score fields, so multiple groups were randomly assigned to the same underlying field.  
 
 Because these simple score fields were binary (i.e. either inside or outside the circular scoring region), we showed participants binary feedback about their current score.
-When an avatar entered the circular region, it was surrounded by a salient sparkling star and the border of the playing area turned green. 
+When an avatar entered the circular region, it was surrounded by a salient sparkling halo and the border of the playing area turned green (see supplementary Fig. \ref{fig:supplemental_interface} for screenshots). 
 Critically, this feedback was only visible to the participant controlling that avatar; participants did \emph{not} directly observe whether other players were in the scoring region.
 
 Each participant played in a single
@@ -241,68 +271,108 @@ While in the waiting room, participants could familiarize themselves with the co
 the waiting room unless the participant was against a wall, in which
 case the border of the playing region would turn red and a warning appeared on screen.  All players spent at least one minute in the waiting room to help ensure familiarity with the controls before starting the game. 
 
-Both in the waiting room and the actual game, were removed for inactivity if we detected that they had switched to another browser tab for more than 30 seconds total throughout the game or if the player's avatar was unmoving against a wall for 30 consecutive seconds.  
+Both in the waiting room and the actual game, players were removed for inactivity if we detected that they had switched to another browser tab for more than 30 seconds total throughout the game or if the player's avatar was moving into a wall for 30 consecutive seconds.  
 We also removed players if their ping response latencies were greater than 125ms for more than 75 seconds in total throughout the game.  
-We paid participants 75 cents for completing our instructions and comprehension checks, and the participants could receive a bonus of up to \$1.25 during the five minutes of gameplay. Each point in the game corresponded to \$0.01 of bonus. Each participant was also paid 15 cents per minute for any time spent in the waiting room, minus any time that player spent against a wall.  These numbers were chosen so that the participants were expected to receive at least a wage of \$9 per hour for the totality of their time active in the
+To minimize disruption of large groups, we allowed multi-player games to continue after a participant disconnected or was removed, as long as at one or more participants remained.
+
+We paid participants 75 cents for completing our instructions and comprehension checks, and the participants could receive a bonus of up to \$1.25 during the five minutes of gameplay. Each point in the game corresponded to \$0.01 of bonus. Each participant was also paid 15 cents per minute for any time spent in the waiting room, minus any time that player spent moving into a wall.  These numbers were chosen so that the participants were expected to receive at least a wage of \$9 per hour for the totality of their time active in the
 experiment.
 
-\todo[inline]{rdh: need to describe how we handled participant disconnects/removals (i.e. allowed the smaller group to continue)? Also, need to refer to Fig. 1 in text, and to the supplemental Fig with actual screenshots.}
 We implemented this experiment using the MWERT framework \cite{hawkins_conducting_2014}, which uses a stack of recent web technologies capable of handling the challenges of real-time, multi-player web experiments, including Node.js, the Socket.io module, and HTML5 canvases.  
-% Since MWERT was originally used
-% for two-player games, we had to extend the MWERT framework in several
-% ways to handle the challenges posed by hosting larger groups of
-% players.
 
 \begin{figure}[t!]
   \centering
-  \includegraphics[width=0.8\textwidth]{./figures/exp1_combined.pdf}
-  \caption{(A) Mean performance of human participants as a function of group size in Experiment 1.  Error bars are 95\% bootstrap confidence intervals using the group as the primary bootstrap unit.  All points are averages over at least two groups. (B) Mean performance of groups of fish, reproduced with permission from Berdahl et al (2013). There was no improvement in the respective small-group regime, highlighted in grey.}
+  \includegraphics[width=0.8\textwidth]{./figures/performance-summary-exp1.pdf}
+  \caption{Mean performance of human participants in each half of Experiment 1 as a function of group size. Larger groups saw significant gains in performance. Error bars are 95\% bootstrap confidence intervals using the group as the primary bootstrap unit. }
   \label{fig:exp1_performance}
 \end{figure}
 
 \subsection{Results}
 
 We hypothesized that individuals in larger groups would be able to achieve higher scores on average than individuals in smaller groups. 
-To test this hypothesis, we examined performance during the second half of the 5-minute session\footnote{Results did not change when using the mean score over the entire session, but we reasoned that using the second half better controls for practice effects.}. 
-We constructed a mixed-effects regression to predict each individual's score including a fixed effect of the number of other players in their environment and random intercepts for each group and each underlying score field.
-We found that the performance of each individual significantly increased when they were in larger group sizes ($b = 0.91$, $t = 3.3$, $p = 0.001$; see Fig. \ref{fig:exp1_performance}A). 
-This effect contrasts with the lack of improvement found by \citeA{berdahl_emergent_2013} in fish groups at the same small sizes (Fig. \ref{fig:exp1_performance}B).
+We also hypothesized that the advantages of larger groups would accrue later in the game, when participants had adjusted to the mechanics of the environment and the behavior of the other players.
+To test these hypothesis, we examined performance during each half of the 5-minute session. 
+In cases where one or more players were disconnected or removed, we measured the size of the group at the end of the session.
+We constructed a mixed-effects regression predicting each individual participant's average score over the time period, including fixed effects of period (first vs. second half), the continuous number of players in their environment (one through six), and their interaction.
+We also included random intercepts for each group and each of the five underlying score fields.
+First, we found a main effect of practice: scores were significantly higher on the second half of the session ($b = 2.1,t=-10.8, p < 0.001$).
+However, we also found a significant interaction with group size: while performance on the first half was similar across group sizes, the performance of each individual on the second half significantly increased in larger group sizes from a score of 0.16 in groups of 1 to 0.24 in groups of 6 ($b = 0.33$, $t = 2.8$, $p = 0.004$; see Fig. \ref{fig:exp1_performance}). 
 
-\section{Experiment 2: Testing copying strategies}
+\section{Experiment 2: Evaluating copying strategies}
 
-What allowed humans in Experiment 1 to reap the benefits of collective intelligence at smaller group sizes than fish?
-We hypothesized that human behavior in this small group regime is the consequence of two underlying strategies: (1) independent exploration and (2) precise, targeted copying based on social inferences about success. 
-These strategies rely on cognitive mechanisms allowing humans to infer ``who knows'' about high-scoring locations over time based on outward behavioral traces (e.g. slowing down) and also to inhibit social influence to act independently when appropriate.
-These strategies contrast with computational models explaining collective sensing in fish as an emergent consequence of two general-purpose processes: (1) the modulation of speed in preferred regions and (2) the general tendency to orient toward other agents \cite{berdahl_emergent_2013}.
+What cognitive mechanisms allowed humans in Experiment 1 to benefit from collective intelligence even in relatively small groups?
+We hypothesized that human behavior in this environment is driven by two underlying strategies: (1) independent exploration and (2) precise, targeted copying based on social inferences about success. 
+These hypothesized strategies rely on cognitive mechanisms allowing humans to infer ``who knows'' about high-scoring locations based on outward behavioral traces (e.g. slowing down or stopping in a region) and also to inhibit social influence to act independently when appropriate.
 
+The design of Experiment 1 made it challenging to disentangle these strategies.
+For example, we were interested in analyzing participant clicks to detect signatures of selective copying, but because there was a single `spotlight', the strategies were confounded: players who were already obtaining reward and trying to stay inside the spotlight were, by necessity, clicking close to other players who were obtaining reward, even if they were not intentionally copying them.
 For our second set of experiments, then, we designed a sequence of controlled scenarios that would be more diagnostic for testing the use of these different strategies.
 We placed participants into an environment with only artificial agents, not other humans, and we manipulated the location of the score field to estimate the probability of spontaneously copying different agents under different conditions.
 
-\subsection{Participants}
+We analyzed the flexibility of copying by decomposing participant behavior into exploring, exploiting, and copying states \cite<e.g.>{rendell_why_2010}.  
+We define exploiting as selecting an action that has an expected good outcome given the agent's knowledge of the environment. 
+We define exploring behavior as selecting an action that has an unknown outcome. 
+We define copying as moving toward the location of another agent. 
+Our hypotheses about social inference can be re-framed as flexibility in the deployment of these states.
+For example, one copy-when-uncertain strategy could be described by only the exploiting and copying behaviors, with agents never engaged in their own independent exploration. 
+And a copy-the-most-successful heuristic is an agent who selectively copies exploiting agents if any exist and can be identified.
+In this environment, exploiting, exploring, and copying behavior were associated with quite recognizable movements, which allows us to easily test models of social learning.  Exploiting behavior in this environment looks like a participant trying to stay close to a particular location or path. Copying behavior is indicated by forward motion, often accelerated motion, towards other agents in the environment. Exploring behavior is indicated by movement that is not well explained as either exploring or copying. 
 
-We recruited 28 unique participants from Amazon Mechanical Turk to play a single-player.
-All participants were from the United
-States.
+% In this environment, exploiting, exploring, and copying behavior were associated with quite recognizable movements, which allows us to easily test models of social learning.  Exploiting behavior in this environment looks like a participant trying to stay close to a particular location or path. Copying behavior is indicated by forward motion, often accelerated motion, towards other agents in the environment. Exploring behavior is indicated by movement that is not well explained as either exploring or copying. 
 
-\subsection{Stimuli \& Procedure}
+\subsection{Methods}
+\subsubsection{Participants}
+
+We recruited 28 unique participants from Amazon Mechanical Turk.
+All participants were from the United States.
+
+\subsubsection{Stimuli \& procedure.}
 
 As in our first experiment, participants were given control of an avatar to explore a virtual environment and were rewarded based on their location according to a hidden ``score field.'' 
 The interface and controls were the same as in Experiment 1, but the procedure differed in several ways. 
-Instead of a single 5-minute session, we designed a sequence of shorter scenarios that were informative for distinguishing between several different potential mechanisms that could be used in the game.
+Instead of a single 5-minute session, we designed a sequence of shorter scenarios that were informative for distinguishing between several different potential mechanisms that could be used in the game. Our key experimental manipulations that we used to distinguish between behavioral mechanisms people were employing in this game involved carefully controlling aspects of the score field dynamics and bot behaviors. 
 
-There were two types of initial training phases that we randomized participants across. These initial training phases corresponded to two different patterns of score field dynamics. In the first pattern, the high scoring region moved contiguously along the walls of the playing area. In the second pattern, the high scoring region moved, as in Experiment 1, from one random location to another within the playing region.  Each participant first played four one-minute long practice rounds on one of these types of score fields. In the first and third practice rounds, the score field was visible to the participant.   In the second and fourth practice rounds, the score field was invisible to the participants, as in Experiment 1.
+In the environment of Experiment 2, the clearest exploiting behavior is pressing the "s" button to stop the player avatar, although exploiting can also look like moving slowly or otherwise meandering around near a single location or in a single direction.  The bots we programmed to have more control in Experiment 2 all exploit by stopping.  We operationalize copying behavior simply as moving towards another agent.  Exploring behavior in Experiment 2 encompasses all other kinds of behavior displayed.
+The experiment was structured into a sequence of two phases: a \emph{practice} phase and an \emph{test} phase.
 
-After these four practice rounds, the participants played two more one-minute rounds that we use for data to analyze. In both of these experimental rounds, we superimposed a wall-following score field pattern and a random walk score field pattern were to create a bimodal dynamic score field. In the one of the experimental rounds, no other agents were present (non-social condition), and in the other there were four bots playing with the participant (social condition). We randomized the order of social and non-social conditions.  We included the non-social condition as a control to help us adjust our statistical analysis of behavioral mechanisms to account for behavior that looks social by chance. 
+\paragraph{Practice phase}
 
-\todo[inline]{An alternative way to organize the below would be to talk about the different conditions of the environment, and then talk about what they allow us to do, instead of mushing it all together.}
+To acclimate participants to the task environment, each game began with four one-minute long practice rounds. 
+In the first and third practice rounds, the score field was \emph{visible} to the participant so they could observe its dynamics.
+In the second and fourth practice rounds, the score field was invisible to the participants, as in Experiment 1. 
+Additionally, we randomized participants into two different groups, who practiced with different score field dynamics. 
+In a ``wall-following'' pattern, the high scoring region moved contiguously along the walls of the playing area. 
+In a ``random-walk'' pattern, the high scoring region slowly drifted, as in Experiment 1, from one random location to another within the playing region.
 
-Our key experimental manipulations that we used to distinguish between behavioral mechanisms people were employing in this game involved carefully controlling aspects of the score field dynamics and bot behaviors. 
+\paragraph{Test phase}
 
-\paragraph{Testing exploring behavior:} In order to better study exploring versus copying and exploiting behavior, we completely omitted the high scoring region for the first twenty of seconds or so and last twenty seconds or so of each round. During these times, all the bots were randomly exploring, with two randomly exploring all the walls (in association with the wall score field dynamic) and two exploring the entire playing region (associated with the random walk score field dynamic).  With this manipulation we are able to test if participants explored randomly or copied other players when nobody in the game was receiving a high score. 
+After the four initial practice rounds, participants played two one-minute test rounds that were the focus of our analyses. 
+In one of the two test rounds, no other agents were present (non-social condition), and in the other there were four bots playing with the participant (social condition). 
+We randomized the order of social and non-social conditions across participants. 
+Each of these rounds was further divided into three conditions, where we causally intervened on the score fields to better test our hypotheses about exploring, copying, and exploiting behavior. 
 
-\paragraph{Testing copying behavior:} After about ten seconds in each round, we introduced the two high scoring regions into the game, and at this time we centered one on one of the bots along the wall and the other on one of the bots exploring in the entire game region. In the non-social round, we simulated the same bots, so that the distribution of score field positions was the same across the two conditions. (The bots were not responsive to the participants behavior, only to each other.) The bot behavior was programmed according to a smart copying model. These bots explore non-socially when no bots are exploiting, and copy exploiting bots when there are any. The two bots along the wall always stayed along the wall, with any copying bot choosing to copy the wall exploiting wall bot, and the bots exploring in the entire playing region also only paid attention to each other in an analogous way. These manipulations allowed us to test whether the participant would preferentially click towards the exploiting bots, and if they had any preference for the bots who were operating on the same score field dynamics the participant had practiced on.
+For the baseline \textit{blank score field} condition, there was no score field. During these times, all the bots were randomly exploring, with two randomly exploring along walls (in association with the wall score field dynamic) and two exploring the center region (associated with the random walk score field dynamic). 
 
-\paragraph{Testing exploiting behavior:} A final manipulation we conducted was to randomly in either the first half or the second half of each experimental round---just when we made the high scoring regions available---automatically grant the participant a high score no matter where they are, for roughly the ten second duration that the high scoring regions were present. The purpose of this manipulation was to see whether participants would exploit when they receive a high score, regardless of what else was going on in the environment.
+\todo[inline]{Make little schematic of the timeline of the game, showing the windows of intervention.}
+At the ten second mark and the forty second mark in each round, we introduced the two high scoring regions into the game (see Fig. \ref{fig:exp2_design}).
+In the \textit{targeted score field} condition, we superimposed the wall-following and random-walk score field patterns to create a bi-modal dynamic score field. 
+We centered one high scoring region on a wall-following bot and one high scoring region on a bot in the center region. 
+In the \textit{localized score field} condition, we centered the high scoring region on the participant, wherever they were. In this condition, they automatically received a high score for roughly the ten second duration that the high scoring regions were present.
+We randomized these two interventions to the two windows across participants. 
+
+In the non-social round, we simulated the same bots, so that the distribution of score field positions was the same across the two conditions. (The bots were not responsive to the participants behavior, only to each other.) The bot behavior was programmed according to a selective copying model. These bots explore non-socially when no bots are exploiting, and copy exploiting bots when there are any. The two bots along the wall always stayed along the wall, with any copying bot choosing to copy the wall exploiting wall bot, and the bots exploring in the entire playing region also only paid attention to each other in an analogous way.
+
+\todo{We also ran two conditions that we did not see results on. To streamline our reporting, we combine these.}
+
+\subsection{Hypotheses}
+
+\paragraph{Testing social behavior:} We included the non-social trial condition as a control to help us adjust our statistical analysis of behavioral mechanisms to account for behavior that looks social by chance. 
+
+\paragraph{Testing exploring behavior:}  With the blank score field manipulation we are able to test if participants explored randomly or copied other players when nobody in the game was receiving a high score. 
+
+\paragraph{Testing copying behavior:}  The targeted score field manipulations allowed us to test whether the participant would preferentially click towards the exploiting bots, and if they had any preference for the bots who were operating on the same score field dynamics the participant had practiced on.
+
+\paragraph{Testing exploiting behavior:}  The purpose of the localized score field manipulation was to see whether participants would exploit when they receive a high score, regardless of what else was going on in the environment.
 
 \begin{table}[]
 \begin{tabular}{l|l|l}
@@ -315,8 +385,10 @@ Indiscriminately copy &  \multicolumn{2}{l|}{ - Independence}  \\ \cline{1-3}
 
 \subsection{Results}
 
-\todo[inline]{TODO: Double-check consistent terminology for condition names and `exploiting' through methods, results, and exp. 3}
+
 To analyze our data from this experiment we use a mixed methods analysis involving both a qualitative coding approach and a quantitative analysis of behavioral traces and click data. 
+
+
 
 \subsubsection{Qualitative Coding Results}
 
@@ -327,9 +399,9 @@ To analyze our data from this experiment we use a mixed methods analysis involvi
     \label{fig:selective}
 \end{figure}
 
-For our qualitative analysis, two authors manually coded videos of our 28 participants. We coded for three behavioral signatures --- selectivity, eagerness, and independence --- on a scale from 0 to 1. \emph{Selectivity} was defined by examining behavior during the ``far'' event, when the participant was not themselves receiving a reward: selectivity was coded as an apparent preference for moving towards agents who were stopped, as opposed to moving toward agents who were moving normally or ignoring other agents.
-\emph{Eagerness} was defined by  the same apparent preference for moving toward stopped agents during the ``close'' event when the participants were already receiving a high score, such that their copying behavior was not contingent on their own state.
-Finally, \emph{independence} was defined by reverse-coding a general preference for moving towards agents who were \emph{not} stopped, at any point in the task\footnote{Because we never observed participants copying moving agents when they themselves were already receiving reward, this signature primarily captures whether participants were preferentially moving toward other agents during exploratory periods when there was no evidence of reward in the environment, thus we interpret low prevalence of this signature as high independence.}. 
+For our qualitative analysis, two authors manually coded videos of our 28 participants. We coded for three behavioral signatures --- \emph{selectivity} in copying exploiting bots, \emph{eagerness} in copying other agents, and \emph{independence} in exploration --- on a scale from 0 to 1. \emph{Selectivity} was defined by examining behavior during the combined targeted and non-localized score field manipulations, when the participant was not themselves receiving a reward but another agent was: selectivity was coded as a preference for moving towards agents who were exploiting, as opposed to moving toward agents who were exploring or copying. This behavioral signature marks participants as selectively copying agents who are exploiting the high scoring regions.
+\emph{Eagerness} was defined by the same preference for moving toward exploiting agents during the localized score field manipulation event when the participants were always receiving a high score, such that their copying behavior was not contingent on their own state. Eager agents copy even when they could be exploiting the high scoring region they have identify. An eager agents prioritize social information.
+Finally, \emph{independence} was defined by reverse-coding a preference for moving towards agents who were \emph{not} stopped, at any point in the task. Because we never observed participants copying moving agents when they themselves were already receiving reward, this signature primarily captures whether participants were preferentially moving toward other agents during exploratory periods when there was no evidence of reward in the environment, thus we interpret low prevalence of this signature as high independence. 
 The endpoints of the scale roughly represented the proportion of time the participant spent displaying the behavior in question compared to the potentially available opportunities to do so. 
 
 The two authors achieved a correlation of $r = 0.75$ for selectivity, $r = 0.55$ for eagerness, and $r = 0.60$ for independence. We resolved disagreements in our codes by averaging. 
@@ -340,12 +412,13 @@ These proportions were significantly greater than 50\% using a two-sided binomia
 In comparison, only 1 participant (4\%) was coded as eager at that level, which was significantly less than 50\%, $p < 0.001$.
 These qualitative results show that participants appeared to selectively copy stopped agents when they themselves were not receiving reward, but otherwise mostly inhibited social influence.
 
+
 \subsubsection{Quantitative Behavioral Results}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8 \linewidth]{figures/proximity.pdf}
-        \vspace{-1em}
+    \vspace{-1em}
     \caption{Participants selectively copy agents who are stopped but only when they themselves are not receiving reward. Error bars are bootstrapped 95\% CIs.}
     \label{fig:proximity}
 \end{figure}
@@ -354,31 +427,22 @@ Next, we tested these same hypotheses quantitatively using data we recorded of p
 We operationalized copying using participant clicks.
 Each click changed their avatar's destination. 
 We were interested in the proximity of the new destination to other agents.
-To test whether participants preferred to copy agents that displayed behavior associated with higher reward (i.e. stopping), we used information about whether each artificial agent was stopped.
-To test whether participants were more likely to copy when they were not already themselves receiving a reward, we compared copying rates across the `close' condition where the score field was automatically placed on top of the participant and the `far' condition where it was only placed on top of artificial agents.
+To test whether participants selectively to copy exploiting agents, we used information about whether each artificial agent was stopped.
+To test whether participants were more likely to copy when they were not already themselves receiving a reward, we compared copying rates across the localized score field condition where the score field was automatically placed on top of the participant and the non-localized, targeted score field condition where it was only placed on top of artificial agents.
 We thus constructed a mixed-effects regression model predicting the (minimum) proximity of each click to other agents as a function of condition and whether the other agents were stopped, including participant-level intercepts and main effects (the model did not converge with a random interaction term). 
-We found a significant interaction, $b = 51.9, t = 4.5, p < 0.001$, showing a strong selective preference for copying other agents who appeared to be receiving reward but only in the condition when the participant was not themselves receiving a reward (see Fig. \ref{fig:proximity}). 
+We found a significant interaction, $b = 51.9, t = 4.5, p < 0.001$, showing a strong selective preference for copying other exploiting agents but only in the condition when the participant was not themselves receiving a reward (see Fig. \ref{fig:proximity}). 
 
 \section{Experiment 3: Generalizing to more complex environments}
 
-To generalize our understanding of these mechanisms in more complex environments, and to more explicitly compare our findings to the nonhuman animal literature, we conducted a final experiment using the materials designed by \citeA{berdahl_emergent_2013} to examine collective sensing in fish.
-These environments are significantly more challenging than the binary spotlight and border environments we used in Experiments 1 and 2.
-They require agents to use continuous gradients to navigate noisy and fluctuating score fields.
-We manipulated the level of noise across different groups, predicting that the cognitive mechanisms discussed in the previous sections would be less reliable under noisier conditions.
 
-\subsection{Participants}
-We recruited 563 unique participants from Amazon Mechanical Turk to
-participate in our experiment.  All participants were from the United
-States.  After excluding 72 participants due to inactivity or latency,
-and 6 others for disconnecting in the first half of the game, we were
-left with usable data from 437 participants in 224 groups.  These
-groups ranged in size from one to six individuals.  Since we were only
-able to collect one group of size six, we ignored this group in our
-analysis.
+
+To generalize our understanding of these mechanisms in more complex environments, and to more explicitly compare our findings to the nonhuman animal literature, we conducted a final experiment using the materials designed by \citeA{berdahl_emergent_2013} to examine collective sensing in fish.
+These environments are significantly more complex than the binary spotlight and border environments we used in Experiments 1 and 2.
+They require agents to use continuous gradients to navigate noisy and fluctuating score fields.
+We manipulated the level of noise across different groups, predicting that the cognitive mechanisms discussed in the previous sections would be less reliable under noisier conditions. To test that our results from Experiment 1 also generalize further, we also modified many aspects of the experiment interface.
 
 \subsection{Stimuli and Procedure}
 
-\todo[inline]{rdh: this can be simplified to just describe differences from exp. 1 (i.e. a lot of procedural things are redundant here)}
 \begin{figure}
   \centering
   \includegraphics[width=0.4\textwidth]{./figures/easy-field}
@@ -390,42 +454,31 @@ analysis.
   \label{fig:score_exp3}
 \end{figure}
 
+%Based on the method reported by Berdahl et al., we added 
 
-The game scores of the participants in our experiments were determined
-by underlying ``score fields''.  These score fields consisted of $480
-\times 285$ arrays of score values for each 125ms time interval in our
-game.  We generated these score fields using the method reported by
-Berdahl et al. \citeyear{berdahl_emergent_2013}. First, a
+As in Experiments 1 and 2, the game scores of the participants in our experiments were determined
+by underlying $480
+\times 285$  ``score fields''.  In contrast to Experiments 1 and 2, though, we used much more complex score fields in our final experiment. We generated these score fields using the method reported by
+Berdahl et al. \citeyear{berdahl_emergent_2013}. Similar to Experiments 1 and 2, a
 ``spotlight'' of high value was created that moved in straight paths
 between uniformly randomly chosen locations.  This spotlight was then
-combined with a field of spatially correlated noise.  This procedure
-yields a complex landscape with many transient maxima and a single
-persistent time-varying global maximum.
+combined with a field of spatially correlated, temporally varying noise.  This procedure
+yields a complex landscape that combines many transient high scoring regions with a persistent random walking high scoring region.
 
 We manipulated the weighting between the noise field and the spotlight
-to generate different task conditions.  We used two weight values,
-corresponding to the ``low'' and ``medium'' noise levels reported by
+to generate different two conditions.  We used two weight values (one lower and one higher),
+corresponding to two of the levels used by
 Berdahl et al.  Examples of score fields are shown in Figure
 \ref{fig:score_exp3}.  113 individuals (63 groups) were assigned to the low
 noise condition and 324 individuals (161 groups) were assigned to the
-medium noise condition.  To decrease variability and increase
+higher noise condition.  To decrease variability and increase
 statistical power, we generated only four distinct score fields per
-noise level, so multiple groups experienced the same fields.  To
-discourage inactivity, players were awarded a score of zero,
-corresponding to zero bonus, if their avatars were touching a wall.
+noise level, so multiple groups experienced the same fields.  
+To
+discourage inactivity, players were awarded a score of zero if their avatars were touching a wall, although in contrast to Experiments 1 and 2, no other indication or warning besides the zero score was given.
 
-We attempted to give our participants perceptual and motor capabilities
-in this environment similar to the capabilities that Berdahl et
-al. observed in the fish in their experiments.  In terms of
-perception, we restricted the information that participants received
-about the underlying score fields in the games.  We allowed
-participants to see only the scores at their avatars' locations.  The
-participants could \emph{not} see the scores that other players were
-obtaining or the scores at any other locations besides their own.
-However, the positions, directions, and speeds of all other players
-were visible to each player.  All of this information was updated in
-real-time every eighth of a second.  A screenshot of the interface we
-used for the game is shown in Figure \ref{fig:exp3_interface}.
+A screenshot of the interface we
+used for Experiment 3 is shown in Figure \ref{fig:exp3_interface}. Rather than showing the current score as binary---having a glowing halo around the player or not---the score was presented as a percentage at the top of the playing area.
 %To model the capabilities that fish were presumed by Berdahl et al. to
 %have in their environment, we restricted participants to only being
 %able to observe the scores at the particular locations in the game
@@ -437,41 +490,32 @@ used for the game is shown in Figure \ref{fig:exp3_interface}.
 %participants could not see the scores that other players were
 %obtaining.  A screenshot of the interface we used for the game is
 %shown in Figure \ref{fig:interface}.
-
-Players controlled their avatars using the left and right arrow keys
+Rather than clicking to change direction, players controlled their avatars using the left and right arrow keys
 to turn (at a rate of $40^\circ$ per second) and could hold the
-spacebar to accelerate.  The avatars automatically moved forward at a
+spacebar to accelerate but had no mechanism to stop completely.  The avatars automatically moved forward at a
 constant velocity of 136 pixels per second whenever the spacebar was
-not depressed.  The avatars instantaneously increased to a constant
-velocity of 456 pixels per second for the duration of time that the
-spacebar was held down.  We chose these speed values to match the
+not depressed.  As in Experiments 1 and 2, the avatars instantaneously increased to a constant
+velocity of 456 pixels per second for the duration of periods of acceleration.  Relevant to Experiment 3, these speed values to match the
 speeds that Berdahl et al. reported observing in their fish, and we
-also matched the playing area dimensions and game duration to the
+also matched the playing area dimensions ($480 \times 285$) and game duration to the
 parameters of their experiments.  Each participant played in a single
 continuous game lasting for 6 minutes.
 
 
 After agreeing to participate in our experiment, participants were
 presented with a set of instructions.  These instructions simply
-described the mechanics of the game.  The participants were not
+described the mechanics of the game.  In Experiment 3, the participants were not
 informed about the nature of the underlying score fields and were not
 encouraged to work together.  After successfully completing a
-comprehension test, participants were then redirected to a waiting
-room.  In the waiting room participants would wait for up to 5 minutes
-or until a pre-assigned number of other players joined the game.
-While in the waiting room, participants could familiarize themselves
-with the controls of the game.  Players were not shown any score in
-the waiting room unless the participant was against a wall, in which
-case the displayed score would change from a dashed line to a red
-``0\%''.  We found no evidence for the amount time a player spent in
-the waiting room having any effect on individual performance in the
-game (linear regression slope 1.993e-06, with 95\% confidence interval
-[-1e-05, 1.4e-05]).  As in the actual game, participants in the
-waiting room would be removed for inactivity if the player's browser
-was active in another tab for more than 15 seconds or if the player's
-avatar was unmoving against a wall for 30 seconds.  We also removed
-players if their ping response latencies were greater than 125ms for
-more than 36 seconds.  We paid participants 50 cents for reading our
+comprehension test, as in Experiment 1 participants redirected to a waiting
+room with parameters and dynamics analogous to Experiment 1 but with Experiment 3's controls.  
+%We found no evidence for the amount time a player spent in
+%the waiting room having any effect on individual performance in the
+%game (linear regression slope 1.993e-06, with 95\% confidence interval
+%[-1e-05, 1.4e-05]). 
+The conditions for removal due to inactivity or latency were similar to Experiment 1 with slightly different parameters.
+
+We paid participants 50 cents for reading our
 instructions, and the participants could receive a bonus of up to
 \$1.25 during the six minutes of gameplay. Final bonuses were computed
 to be the players' cumulative scores divided by the total length of
@@ -482,6 +526,8 @@ player spent against a wall.  These numbers were chosen so that the
 participants were expected to receive at least the U.S. federal minimum
 wage of \$7.25 per hour for the totality of their time active in the
 experiment.
+
+Exploiting behavior in Experiment 3 is markedly different from exploring behavior in Experiments 1 and 2. Whereas in Experiments 1 and 2 participants could depress the "s" key to stop moving, there was no such option in Experiment 3.  In order to stay in one location, players must rotate in a small circle by depressing the left or right arrow key. The speed and turning radius of the agents led to this kind of exploiting behavior looking like the avatar is spinning. Experiment 3 therefore allows people to selectively copy according to a different visual cue for success, which must be adaptively learned on-the-fly in this different kind of environment.
 
 
 \begin{figure}[t]
@@ -496,60 +542,27 @@ experiment.
   \label{fig:performance}
 \end{figure}
 
+
+\subsection{Participants}
+We recruited 563 unique participants from Amazon Mechanical Turk to
+participate in our experiment.  All participants were from the United
+States.  After excluding 72 participants due to inactivity or latency,
+and 6 others for disconnecting in the first half of the game, we were
+left with usable data from 437 participants in 224 groups.  These
+groups ranged in size from one to six individuals.  Since we were only
+able to collect one group of size six, we ignored this group in our
+analysis.
+
 \subsection{Results}
 
-We find that group size is positively related to group performance in
-this game in the low noise condition.  However, we find that there was
-little effect of group size in the medium noise condition.  Average
-performance as a function of group size in each of these conditions is
-shown in Figure \ref{fig:performance}.  A linear regression on the
-individuals in the low noise condition produces a significant positive
-slope of 0.0238 and a 95\% confidence interval (CI) of
-$[0.006,0.041]$.  A linear regression on the individuals in the medium
-noise condition produces a marginally significant positive slope of
-$0.0068$, 95\% CI $[-0.001,0.015]$, and this trend is weakened
-substantially with the inclusion of the single 6-person group.
-Moreover, the marginally significant result in the medium noise
-condition is driven entirely by the effect of group size in one of the
-four distinct score fields we used.  This particular score field
-displays a significant effect of group size with a positive slope of
-0.0306, 95\% CI: $[0.015,0.046]$, while none of the others do.
-Qualitative inspection revealed that this particular score field
-seemed to share spatial properties more similar to the low noise score
-fields, which may explain the strength of the effect in that
-particular score field.  Overall these results indicate that larger
-groups do tend to perform systemically better on our task than those
-in smaller groups, at least in the low noise
-condition.\footnote{Results were similar using a mixed-effects
-  regression including group and score field as random effects, and
-  also revealed larger variability due to score field in the
-  ``medium'' noise condition than the ``low'' noise condition.}
+We find that group size is positively related to group performance in this game in the low noise condition.  However, we find that there was
+little effect of group size in the medium noise condition.  Average performance as a function of group size in each of these conditions is shown in Figure \ref{fig:performance}.  A linear regression on the individuals in the low noise condition produces a significant positive slope of 0.0238 and a 95\% confidence interval (CI) of $[0.006,0.041]$.  A linear regression on the individuals in the medium noise condition produces a marginally significant positive slope of $0.0068$, 95\% CI $[-0.001,0.015]$, and this trend is weakened substantially with the inclusion of the single 6-person group. 
+Moreover, the marginally significant result in the medium noise condition is driven entirely by the effect of group size in one of the four distinct score fields we used.  This particular score field displays a significant effect of group size with a positive slope of 0.0306, 95\% CI: $[0.015,0.046]$, while none of the others do. Qualitative inspection revealed that this particular score field seemed to share spatial properties more similar to the low noise score fields, which may explain the strength of the effect in that particular score field.  Overall these results indicate that larger groups do tend to perform systemically better on our task than those in smaller groups, at least in the low noise
+condition.\footnote{Results were similar using a mixed-effects regression including group and score field as random effects, and also revealed larger variability due to score field in the ``medium'' noise condition than the ``low'' noise condition.}
+This effect contrasts with the lack of improvement found by \citeA{berdahl_emergent_2013} in fish groups at the same small sizes (Fig. \ref{fig:exp1_performance}B).
 
-In order to understand the factors that may have contributed to the
-increases in performance achieved by larger groups in the low noise
-condition, we examine the behavior of the players in our games.  We
-assume a simple state-based representation of player behavior.  We
-then attempt to identify how participants choose to occupy particular
-behavioral states at each point in time, and we examine the
-relationship between the players' decisions to occupy particular
-states and the performance of those players.  Specifically, we assume
-that at any particular point in time a player is either ``exploring'',
-``exploiting'', or ``copying'' \cite<see>[for a similar
-  classification]{rendell_why_2010}.  Conceptually, a player is
-exploring if that player is looking for a good location to exploit, a
-player is exploiting if that player has found a location where the
-player wants to remain, and a player is copying if that player is
-intending to move to the location of another player.
-
-We empirically determine the state of each player at each point in
-time using a set of hand-tuned filters.  All of these filters depend
-only on information that is observable to any player in the game
-(i.e., the filters do not depend directly on the scores of any
-individuals), and hence we can use the inferred states of players as
-proxies for what other players might infer as the states of those
-players.  Also, since the states are not defined in terms of scores,
-we can meaningfully quantify the relationship between state and
-performance.
+In order to understand the factors that may have contributed to the increases in performance achieved by larger groups in the low noise condition, we examine the behavior of the players in our games.  We assume a simple state-based representation of player behavior.  We then attempt to identify how participants choose to occupy particular behavioral states at each point in time, and we examine the relationship between the players' decisions to occupy particular states and the performance of those players.  Specifically, we assume that at any particular point in time a player is either ``exploring'', ``exploiting'', or ``copying'' \cite<see>[for a similar classification]{rendell_why_2010}.  Conceptually, a player is exploring if that player is looking for a good location to exploit, a player is exploiting if that player has found a location where the player wants to remain, and a player is copying if that player is intending to move to the location of another player.
+We empirically determine the state of each player at each point in time using a set of hand-tuned filters. All of these filters depend only on information that is observable to any player in the game (i.e., the filters do not depend directly on the scores of any individuals), and hence we can use the inferred states of players as proxies for what other players might infer as the states of those players.  Also, since the states are not defined in terms of scores, we can meaningfully quantify the relationship between state and performance.
 
 \begin{figure}[t!]
   \centering
@@ -615,42 +628,61 @@ to accurately infer whether another player is receiving a high score
 may be able to achieve higher performance on our task by leveraging
 these inferences to more effectively copy others.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.9\textwidth]{./figures/copy-true-proportion}
-  \caption{Average group performance as a function of the fraction of
-    copying in the group that consists of ``intelligent
-    copying''---copying of an individual with a higher score.  Lines
-    are individually fitted regression lines.}
-  \label{fig:proportion}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.9\textwidth]{./figures/copy-true-proportion}
+%   \caption{Average group performance as a function of the fraction of
+%     copying in the group that consists of ``intelligent
+%     copying''---copying of an individual with a higher score.  Lines
+%     are individually fitted regression lines.}
+%   \label{fig:proportion}
+% \end{figure}
 
 \section{Discussion}
 
+\todo[inline]{Revise summary}
 Our experiments established that people display collective intelligence in a multi-agent tracking paradigm inspired by experiments conducted with fish by previous researchers, and that people display emergent collective intelligence at much smaller group sizes in our environments than fish do in the setup of prior research.  In our analyses of Experiments 2 and 3, we also confirmed that agent reasoning ability underlie the way that people achieve collective intelligence in this environment.
 
-\subsection{Group Size}
+\paragraph{Social inference mechanisms in non-human animals.}
 
-In our experiment, we observed that humans were able to achieve
-increases in performance at much smaller group sizes than fish.  Fish
-exhibited mild improvements in group performance at groups of 16 and
-more substantial improvements at groups of 64 and 128.  However, we
-see significant improvements in human performance at just five
-players.  This difference may be at least partially explained by the
-differences in the mechanism that humans appear to use in this task as
-compared to fish.
+\todo[inline]{Can Andrew help extend this?}
+While we focused on the consequences of fast social inferences in human groups, the status of similar mechanisms in non-human animals remains more controversial.
+At least some species, such as cliff-dwelling swallows, appear to engage in signalling behavior at food sites \cite{brown1988social,brown1991food}, which effectively externalizes success and draws conspecifics to enhance the efficiency of foraging \cite{torney2011signalling}.
+Many additional cues of success are available as simple by-products of foraging, such as the sound of eating or (more directly) the scent of food \cite{galef2001social}.
+However, copying based on these cues may be explained by associative learning or other simple biases.
 
-Beyond the recent literature on collective intelligence in nonhuman
-animal groups, there has been a long line of work studying the factors
-that predict the performance of human groups in various scenarios
-\cite{kerr_group_2004}.  Our findings are consistent with previous
-work suggesting that having a larger group is beneficial in complex,
-uncertain environments \cite{stewart_meta-analytic_2006}.  Unlike much
-of this previous work, however, we focus here on the possibility in
-larger groups of new emergent group abilities and behaviors, and on
-the mechanisms leading to these emergent properties.
+\paragraph{Comparison to Berghdal et al. (2013).}
 
-\subsection{Metacognitive Reasoning}
+Our study design was inspired by collective sensing tasks used in the animal behavior literature, particularly the one proposed for groups of fish by \citeA{berdahl_emergent_2013}. 
+We found similar improvements in performance as a function of group size in humans, suggesting that the general phenomenon of collective intelligence persists across different species.
+At the same time, we observed some key differences, suggesting that these collective intelligence phenomena may arise from different mechanisms.
+First, we found that humans were able to achieve increases in performance at much smaller group sizes than fish. 
+Fish exhibited mild improvements in average performance at groups of 16 and more substantial improvements at groups of 64 and 128.  
+However, we see significant improvements in human performance at just five players. 
+Second, while there was no difference in the effect of group size across different environmental noise levels in fish, we found that in the small-group regime we considered, the benefits of larger group sizes only accrued in low-noise conditions.
+\todo[inline]{should we make sure to discuss this above? we could just add it as an earlier general discussion paragraph, or add an Experiment 3 discussion section before the general discussion...}
+%This difference in the small-group regime may be at least partially explained by the differences in the mechanism that humans appear to use in this task as compared to fish.
+
+% Golden shiners prefers to spend time in dark areas of the water, presumably to avoid predators.  
+% In this task, the researchers studied the effectiveness of the fish at finding the darker areas of the tank as a function of the number of fish participating in the task.  
+% The researchers found that average group performance increased significantly as a function of group size, and they identified two simple behavioral mechanisms driving this improvement:
+% First, individual fish tended to move more slowly in darker areas. 
+% Second, individual fish also tended to turn towards conspecifics.  
+% This experiment provides a striking example of a higher level of intelligence at the group level emerging from minimal intelligence at the individual level.
+
+These differences may partially be explained by the different mechanisms indentified in our different studies.
+\citeA{berdahl_emergent_2013} explains collective sensing in fish as an emergent consequence of two more general-purpose processes: (1) the modulation of speed in preferred regions and (2) the general, un-targeted tendency to orient toward other agents.
+These mechanisms have both similarities and differences with the social inference mechanisms we have identified in humans.
+Similar to our finding in Experiment 3 that humans modulate their exploring vs. exploiting behavior based on their current score, fish modulated their speeds based on the level of darkness that they were experiencing.  
+Fish moved slower in their preferred darker areas and faster in lighter areas.  
+And, similar to the copying behavior we observe, fish had a tendency for turning towards other fish.  
+However, the model fish behavior  did not require any social inference or selectivity. 
+Whereas fish appear to equally weight all nearby conspecifics, humans modulate their copying behavior based on the inferred scores of other players.
+Conversely, we found that humans strategically deploy \emph{independent} exploration (i.e. explicitly ignoring or moving away from other agents at times) rather than constantly being pulled toward the locations of other players. 
+These differences support recent work in social learning \cite{wisdom_social_2013, mcelreath_beyond_2008}, which find flexibility in the strategic deployment of imitation in humans.
+Of course, it is difficult to directly compare human performance to the performance of fish given the differences between the perceptual and motor abilities of fish in an actual tank and those available to participants in our simulated environment.  
+
+\paragraph{Metacognitive Reasoning.}
 
 People in our experiments displayed remarkable ability to adapt to the new environment they entered for these experiments. For fish, the ability to
 gain from group performance in these collective sensing tasks is
@@ -661,46 +693,23 @@ for the first time, appear to have discovered reasonable collective
 sensing strategies in just a matter of minutes.
 
 
-\subsection{Agent Reasoning}
+\paragraph{Organizational behavior.}
 
-Interestingly, the mechanism we identify in humans is similar to that
-of fish in some ways, but it is also distinct important ways.  Similar
-to the behavior of humans in choosing appropriate states based on
-current score, fish modulated their speeds based on the level of
-darkness that they were experiencing.  Fish moved slower in their
-preferred darker areas and faster in lighter areas.  Similar to the
-copying behavior we observe, fish had a tendency for turning towards
-other fish.  However, Berdahl et al.'s model of the behavior of their
-fish did not require any reference to the kind of discerning social
-awareness that we see in humans.  Whereas fish appear to equally
-weight information from all nearby conspecifics, effective humans
-appear to modulate their copying behavior based on the inferred scores
-of other players. The strategic use of independent exploration (a form
-of asocial learning) was also key to the mechanism enabling human
-success. These key differences support recent work in social learning
-\cite{wisdom_social_2013, mcelreath_beyond_2008}, which find an
-impressive flexibility in the strategic deployment of imitation in
-humans. 
-
-\subsection{Limitations}
-
-Of course, it is difficult to compare human performance
-directly to that of fish given the differences between the perceptual
-and motor abilities of fish in an actual fish tank and the abilities
-of the participants in our simulated environment.  
-
+Beyond the recent literature on collective intelligence in nonhuman animal groups, there has been a long line of work studying the factors that predict the performance of human groups in various scenarios \cite{kerr_group_2004}.  
+Our findings are consistent with previous work suggesting that having a larger group is beneficial in complex, uncertain environments \cite{stewart_meta-analytic_2006}.  
+Unlike much of this previous work, however, we focus here on the possibility in larger groups of new emergent group abilities and behaviors, and on the mechanisms leading to these emergent properties.
 
 %Nevertheless, our comparison hints at a superior capacity for distributed cognition in humans, possibly enabled by our ability for theory of mind.
 
-\subsection{Contextual Factors}
+\paragraph{Contextual Factors.}
 
 The picture of collective intelligence in humans and across specifies that is emerging from the scientific literature is that different mechanisms give rise to collective intelligence in different species, and that certainly the same can be said even of the different types of human collective intelligence displayed in different contexts.  Human collective intelligence on Wikipedia operates in a way that is very different from human collective intelligence (or unintelligence) on social media platforms like Twitter, and both are quite different from the mechanisms of collective intelligence through which bees find new homes or ants scavenge for food. 
 
 The mechanisms we identify in our experiment are yet another context.
 
-Still, the quest continues for what general abilities and principles underlie the range of intricate and sophisticated forms of human collective intelligence, and distinguish those as a group from the apparently simpler, more swarm-like forms of collective intelligence found in species such as social insects or fish.  Focusing on abilities rather than mechanisms potentially provides a slightly more domain-general way to understand collective intelligence.
+Still, the quest continues for what general abilities and principles underlie the range of intricate and sophisticated forms of human collective intelligence, and distinguish those as a group from the apparently simpler, more swarm-like forms of collective intelligence found in species such as social insects or fish.  Focusing on cognitive mechanisms rather than general strategies may provide a more domain-general way to understand collective intelligence.
 
-\section{Conclusion}
+\paragraph{Conclusion.}
 
 Our work sheds light on one of the pressing puzzles of
 human collective intelligence and human distributed cognition.  What
@@ -709,10 +718,9 @@ coordinated distributed information processing agents that can
 accomplish more than any individual alone?  The perspective of group behavior as
 distributed processing \cite{hutchins_cognition_1995} suggests the
 importance of communication for collective intelligence because of the
-importance of communication in distributed systems.  Moreover, theory
-of mind---an enabler of implicit communication---has been shown to be
-predictive of collective intelligence \cite{woolley_evidence_2010,
-  engel_reading_2014}.  Our work further
+importance of communication in distributed systems.  
+%Moreover, theory of mind---an enabler of implicit communication---has been shown to be predictive of collective intelligence \cite{woolleyevidence2010,  engelreading2014}.  
+Our work further
 suggests that one of the roles that theory of mind plays in the
 emergence of collective intelligence is facilitating implicit
 communication that allows for coordination on good collective actions.
