@@ -161,7 +161,7 @@ Humans continually move between different contexts where success manifests in di
 By inverting a generative model of behavior \cite<e.g.>{jara2016naive,baker2017rational}, agents can make context-sensitive predictions and quickly infer the hidden success or knowledge of others.
 
 This ability has been extensively studied in cognitive science.
-Even young children are able to rapidly infer which partners are more trustworthy and knowledgeable than others, and prefer to learn from them \cite{wood2013whom,sobel2013knowledge,gweon2014sins,poulin2016developmental,harris2018cognitive,mills2016learning}, and adults can appropriately discount unreliable social information in their decision-making \cite{velez2019integrating}.
+Even young children are able to rapidly infer which partners are more trustworthy and knowledgeable than others, and prefer to learn from them \cite{wood2013whom,sobel2013knowledge,gweon2014sins,poulin2016developmental,harris2018cognitive,mills2016learning}, and adults can appropriately discount unreliable social information in their decision-making \cite{hawthorne2019reasoning,velez2019integrating,WhalenEtAl18_SensitivityToSharedInfo}.
 However, this cognitive literature  has largely developed independently from work on social learning strategies in collectives.
 Previous work has suggested that inferences about underlying cues may prevent costly and erroneous cascades of behavior \cite{bikhchandani1998learning,giraldeau2002potential}, but the broader implications of social inference abilities for collective intelligence remain unclear.
 
@@ -312,9 +312,9 @@ We placed participants into an environment with artificial agents that we design
 For conceptual clarity about our design and analysis, it is helpful to define three broad `states': exploring, exploiting, and copying \cite<e.g.>{rendell_why_2010}.
 We define \emph{exploiting} as selecting an action that maximizes the expected score given the agent's current knowledge of the environment, i.e. staying close to a known location of the spotlight. 
 We define \emph{copying} as forward motion, sometimes accelerated, toward the location of another agent. 
-We define \emph{exploring} as selecting an action that has an unknown outcome, often moving to a region. 
+We define \emph{exploring} as selecting an action that has an unknown outcome, often moving to a region without other agents. 
 In this environment, exploiting, exploring, and copying behavior were associated with distinct and recognizable movements.
-Our hypotheses
+Our hypothesized strategies can be operationalized as selective deployment of these three states: exploiting rather than copying or exploring when one is in a high-scoring region, and copying rather than exploring in low-scoring regions only when it can be inferred that another agent is receiving a high score, based on outward behavioral signatures.
 
 \subsection{Methods}
 \subsubsection{Participants}
@@ -329,7 +329,15 @@ The interface and controls were the same as in Experiment 1, but the procedure d
 Instead of a single 5-minute session, we designed a sequence of shorter scenarios that were informative for distinguishing between several different potential mechanisms that could be used in the game. Our key experimental manipulations that we used to distinguish between behavioral mechanisms people were employing in this game involved carefully controlling aspects of the score field dynamics and bot behaviors. 
 
 In the environment of Experiment 2, the clearest exploiting behavior is pressing the "s" button to stop the player avatar, although exploiting can also look like moving slowly or otherwise meandering around near a single location or in a single direction.  The bots we programmed to have more control in Experiment 2 all exploit by stopping.  We operationalize copying behavior simply as moving towards another agent.  Exploring behavior in Experiment 2 encompasses all other kinds of behavior displayed.
-The experiment was structured into a sequence of two phases: a \emph{practice} phase and an \emph{test} phase.
+The experiment was structured into a sequence of two phases: a \emph{practice} phase and an \emph{test} phase (see Fig. \ref{fig:exp2_design}A).
+
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width=1\textwidth]{./figures/exp2_design.pdf}
+  \caption{Design of Experiment 2. (A) Each session is divided into an asocial practice phase containing 4 rounds, and test phase containing 2 rounds. Each round lasts 60 seconds. (B) The timeline of each test phase round involves a baseline condition with no score field, and two windows of intervention beginning at approximately 10 seconds and 40 seconds. (C) The localized and distant score interventions manipulate the location of the score field to ensure the player is receiving high reward or not, respectively, while other a subset of other agents are receiving high reward.}
+  \label{fig:exp2_design}
+\end{figure}
+
 
 \paragraph{Practice phase}
 
@@ -338,7 +346,7 @@ In the first and third practice rounds, the score field was \emph{visible} to th
 In the second and fourth practice rounds, the score field was invisible to the participants, as in Experiment 1. 
 Additionally, we randomized participants into two different groups, who practiced with different score field dynamics. 
 In a ``wall-following'' pattern, the high scoring region moved contiguously along the walls of the playing area. 
-In a ``random-walk'' pattern, the high scoring region slowly drifted, as in Experiment 1, from one random location to another within the playing region.
+In a ``random-walk'' pattern, the high scoring region slowly drifted, as in Experiment 1, from one random location to another within the playing region.\footnote{Because we did not observe any differences in participant behavior depending on the score field dynamics observed during the practice phase, we collapsed over this factor in our analyses.}
 
 \paragraph{Test phase}
 
@@ -348,17 +356,13 @@ We randomized the order of social and non-social conditions across participants.
 Each of these rounds was further divided into three conditions, where we causally intervened on the score fields to better test our hypotheses about exploring, copying, and exploiting behavior. 
 
 For the baseline \textit{blank score field} condition, there was no score field. During these times, all the bots were randomly exploring, with two randomly exploring along walls (in association with the wall score field dynamic) and two exploring the center region (associated with the random walk score field dynamic). 
-
-\todo[inline]{Make little schematic of the timeline of the game, showing the windows of intervention?}
-At the ten second mark and the forty second mark in each round, we introduced the two high scoring regions into the game (see Fig. \ref{fig:exp2_design}).
+At the ten second mark and the forty second mark in each round, we introduced the two high scoring regions into the game (see Fig.~\ref{fig:exp2_design}B).
 In the \textit{distant intervention} condition, we superimposed the wall-following and random-walk score field patterns to create a bi-modal dynamic score field. 
 We centered one high scoring region on a wall-following bot and one high scoring region on a bot in the center region. 
-In the \textit{localized intervention} condition, however, we centered the high scoring region on the \emph{participant}, wherever they were. In this condition, they automatically received a high score for roughly the ten second duration that the high scoring regions were present.
-We randomized these two interventions to the two windows across participants. 
+In the \textit{localized intervention} condition, however, we centered the high scoring region on the \emph{participant}, wherever they were. In this condition, they automatically received a high score for roughly the ten second duration that the high scoring regions were present (see Fig.~\ref{fig:exp2_design}C).
+We randomized these two interventions to the two windows across participants.
 
 In the non-social round, we simulated the same bots, so that the distribution of score field positions was the same across the two conditions. (The bots were not responsive to the participants behavior, only to each other.) The bot behavior was programmed according to a selective copying model. These bots explore non-socially when no bots are exploiting, and copy exploiting bots when there are any. The two bots along the wall always stayed along the wall, with any copying bot choosing to copy the wall exploiting wall bot, and the bots exploring in the entire playing region also only paid attention to each other in an analogous way.
-
-\todo{We also ran two conditions that we did not see results on. To streamline our reporting, we combine these.}
 
 \subsection{Hypotheses}
 
@@ -383,8 +387,6 @@ Indiscriminately copy &  \multicolumn{2}{l|}{ - Independence}  \\ \cline{1-3}
 
 
 To analyze our data from this experiment we use a mixed methods analysis involving both a qualitative coding approach and a quantitative analysis of behavioral traces and click data. 
-
-
 
 \subsubsection{Qualitative Coding Results}
 
@@ -427,102 +429,59 @@ To test whether participants selectively to copy exploiting agents, we used info
 To test whether participants were more likely to copy when they were not already themselves receiving a reward, we compared copying rates across the localized score field condition where the score field was automatically placed on top of the participant and the non-localized, targeted score field condition where it was only placed on top of artificial agents.
 We thus constructed a mixed-effects regression model predicting the (minimum) proximity of each click to other agents as a function of condition and whether the other agents were stopped, including participant-level intercepts and main effects (the model did not converge with a random interaction term). 
 We found a significant interaction, $b = 51.9, t = 4.5, p < 0.001$, showing a strong selective preference for copying other exploiting agents but only in the condition when the participant was not themselves receiving a reward (see Fig. \ref{fig:proximity}). 
+\todo[inline]{rxdh: do we also want to report the significant interaction with the non-social condition here (i.e. that this selectivity was not observed with the `invisible' bots, making it unlikely to observe such a pattern by chance). Otherwise, we're not actually using the non-social condition anywhere in the results.}
 
 \section{Experiment 3: Generalizing to more complex environments}
 
 To generalize our understanding of these mechanisms to more complex environments, and to more explicitly compare our findings to the nonhuman animal literature, we conducted a final experiment using the materials designed by \citeA{berdahl_emergent_2013} to examine collective sensing in fish.
 These environments are significantly more complex than the binary spotlight and border environments we used in Experiments 1 and 2.
 They require agents to use continuous gradients to navigate noisy and fluctuating score fields.
-We manipulated the level of noise across different groups, predicting that the cognitive mechanisms discussed in the previous sections would be less reliable under noisier conditions. To test that our results from Experiment 1 also generalize further, we also modified many aspects of the experiment interface.
+We manipulated the level of noise across different groups, predicting that the cognitive mechanisms discussed in the previous sections may be less reliable under noisier conditions. To test that the social learning strategies identified in the previous experiments also generalize to different external behavioral signatures, we also modified several other aspects of the experiment interface.
+For example, a small change in the movement controls led to a different downstream visual cue of success, which flexible agents making social inferences should be able to use for selective copying just as effectively as participants in the previous experiments were able to use the cue of completely stopping.
 
-\subsection{Stimuli and Procedure}
+\subsection{Methods}
+\subsubsection{Participants}
+
+We recruited 563 unique participants from Amazon Mechanical Turk to participate in our experiment.
+All participants were from the United States.
+After excluding 72 participants due to inactivity or latency, and 6 others for disconnecting in the first half of the game, we were left with usable data from 437 participants in 224 groups.
+113 individuals (63 groups) were in the low noise condition and 324 individuals (161 groups) were in the high noise condition. 
+These groups ranged in size from one to six individuals.  
+Since only one group of size six completed the task without disconnections, we ignored this group in our analysis.
+
+\subsubsection{Stimuli and Procedure}
 
 \begin{figure}
   \centering
   \includegraphics[width=0.4\textwidth]{./figures/easy-field}
   \hspace{0.1cm}
   \includegraphics[width=0.4\textwidth]{./figures/medium-field}
-  \caption{Example score fields from the low noise (left) and medium
-    noise (right) conditions at particular points in time.  Red areas
-    indicate higher scoring areas.}
+  \caption{Example score fields from the low noise (left) and high noise (right) conditions at particular points in time.  Red areas indicate higher scoring areas.}
   \label{fig:score_exp3}
 \end{figure}
 
 %Based on the method reported by Berdahl et al., we added 
 
-As in Experiments 1 and 2, the game scores of the participants in our experiments were determined
-by underlying $480
-\times 285$  ``score fields''.  In contrast to Experiments 1 and 2, though, we used much more complex score fields in our final experiment. We generated these score fields using the method reported by
-Berdahl et al. \citeyear{berdahl_emergent_2013}. Similar to Experiments 1 and 2, a
-``spotlight'' of high value was created that moved in straight paths
-between uniformly randomly chosen locations.  This spotlight was then
-combined with a field of spatially correlated, temporally varying noise.  This procedure
-yields a complex landscape that combines many transient high scoring regions with a persistent random walking high scoring region.
+Our primary change from Experiments 1 and 2 was switching from a binary score field to a more complex, gradient score landscape.
+These more complex fields were generated using the method reported by \citeA{berdahl_emergent_2013}. 
+We began with the same randomly moving ``spotlight'' of high value as before. 
+However, we then combined the spotlight with a field of spatially correlated, temporally varying noise.  
+By manipulating the proportional weighting of the noise field and the spotlight, we generated two different conditions, corresponding to two of the noise levels used by \citeauthor{berdahl_emergent_2013}. 
+In the \emph{low noise} condition, the spotlight was weighted strongly compared to the noise field (10\% noise), with the noise field providing minor background variation (see Fig. \ref{fig:score_exp3}, left). 
+In the \emph{high noise} condition, the weighting of the noise field was increased (25\% noise), providing more extreme fluctuation outside of the spotlight (see Fig. \ref{fig:score_exp3}, right).
+To decrease variability and increase statistical power, we generated only four distinct score fields per noise level, so multiple groups experienced the same fields.  
 
-We manipulated the weighting between the noise field and the spotlight
-to generate different two conditions.  We used two weight values (one lower and one higher),
-corresponding to two of the levels used by
-Berdahl et al.  Examples of score fields are shown in Figure
-\ref{fig:score_exp3}.  113 individuals (63 groups) were assigned to the low
-noise condition and 324 individuals (161 groups) were assigned to the
-higher noise condition.  To decrease variability and increase
-statistical power, we generated only four distinct score fields per
-noise level, so multiple groups experienced the same fields.  
-To
-discourage inactivity, players were awarded a score of zero if their avatars were touching a wall, although in contrast to Experiments 1 and 2, no other indication or warning besides the zero score was given.
+In addition to these more complex score fields, we made several adjustments to the interface.
+First, rather than showing their current score as binary---a glowing halo around the player when inside the spotlight---their score was presented as a percentage at the top of the playing area (see Supplemental Fig.~\ref{fig:exp3_interface} for a screenshot).
+Second, rather than clicking to change direction, players controlled their avatars using their keyboard. 
+The left and right arrow keys were used to turn (at a rate of $40^\circ$ per second) and the
+spacebar was used to accelerate. 
+Unlike before, we did not provide a mechanism to stop completely.  
+Given the closer relation to \citeA{berdahl_emergent_2013} in this experiment, it is also relevant that the speeds of the avatars and the playing area dimensions ($480 \times 285$) throughout all of our experiments were matched to those reported by Berdahl et al.; in this experiment, we additionally used the same total task length of six minutes.
 
-A screenshot of the interface we
-used for Experiment 3 is shown in Figure \ref{fig:exp3_interface}. Rather than showing the current score as binary---having a glowing halo around the player or not---the score was presented as a percentage at the top of the playing area.
-%To model the capabilities that fish were presumed by Berdahl et al. to
-%have in their environment, we restricted participants to only being
-%able to observe the scores at the particular locations in the game
-%their avatars were occupying.  This score was displayed to the player
-%at the top of the screen.  The players were also able to see their own
-%positions in the environment as well as the positions, directions, and
-%speeds of all other players.  This information was updated in
-%real-time every eighth of a second.  Importantly, though, the
-%participants could not see the scores that other players were
-%obtaining.  A screenshot of the interface we used for the game is
-%shown in Figure \ref{fig:interface}.
-Rather than clicking to change direction, players controlled their avatars using the left and right arrow keys
-to turn (at a rate of $40^\circ$ per second) and could hold the
-spacebar to accelerate but had no mechanism to stop completely.  The avatars automatically moved forward at a
-constant velocity of 136 pixels per second whenever the spacebar was
-not depressed.  As in Experiments 1 and 2, the avatars instantaneously increased to a constant
-velocity of 456 pixels per second for the duration of periods of acceleration.  Relevant to Experiment 3, these speed values to match the
-speeds that Berdahl et al. reported observing in their fish, and we
-also matched the playing area dimensions ($480 \times 285$) and game duration to the
-parameters of their experiments.  Each participant played in a single
-continuous game lasting for 6 minutes.
-
-
-After agreeing to participate in our experiment, participants were
-presented with a set of instructions.  These instructions simply
-described the mechanics of the game.  In Experiment 3, the participants were not
-informed about the nature of the underlying score fields and were not
-encouraged to work together.  After successfully completing a
-comprehension test, as in Experiment 1 participants redirected to a waiting
-room with parameters and dynamics analogous to Experiment 1 but with Experiment 3's controls.  
-%We found no evidence for the amount time a player spent in
-%the waiting room having any effect on individual performance in the
-%game (linear regression slope 1.993e-06, with 95\% confidence interval
-%[-1e-05, 1.4e-05]). 
-The conditions for removal due to inactivity or latency were similar to Experiment 1 with slightly different parameters.
-
-We paid participants 50 cents for reading our
-instructions, and the participants could receive a bonus of up to
-\$1.25 during the six minutes of gameplay. Final bonuses were computed
-to be the players' cumulative scores divided by the total length of
-the game times the total possible bonus.  Following the current
-convention on Mechanical Turk, each participant was also paid 12 cents
-per minute for any time spent in the waiting room, minus any time that
-player spent against a wall.  These numbers were chosen so that the
-participants were expected to receive at least the U.S. federal minimum
-wage of \$7.25 per hour for the totality of their time active in the
-experiment.
-
-Exploiting behavior in Experiment 3 is markedly different from exploring behavior in Experiments 1 and 2. Whereas in Experiments 1 and 2 participants could depress the "s" key to stop moving, there was no such option in Experiment 3.  In order to stay in one location, players must rotate in a small circle by depressing the left or right arrow key. The speed and turning radius of the agents led to this kind of exploiting behavior looking like the avatar is spinning. Experiment 3 therefore allows people to selectively copy according to a different visual cue for success, which must be adaptively learned on-the-fly in this different kind of environment.
-
+The procedure was similar to Experiment 1: after successfully completing a comprehension test,  participants were redirected to a waiting room where they could get used to the controls.  
+Participants were not given any practice rounds, or any information about the nature of the underlying score fields.
+The conditions for removal due to inactivity or latency, and the bonusing scheme, were also similar to Experiment 1 with slightly different parameters.
 
 \begin{figure}[t]
   \centering
@@ -536,27 +495,49 @@ Exploiting behavior in Experiment 3 is markedly different from exploring behavio
   \label{fig:performance}
 \end{figure}
 
-
-\subsection{Participants}
-We recruited 563 unique participants from Amazon Mechanical Turk to
-participate in our experiment.  All participants were from the United
-States.  After excluding 72 participants due to inactivity or latency,
-and 6 others for disconnecting in the first half of the game, we were
-left with usable data from 437 participants in 224 groups.  These
-groups ranged in size from one to six individuals.  Since we were only
-able to collect one group of size six, we ignored this group in our
-analysis.
-
 \subsection{Results}
 
-We find that group size is positively related to group performance in this game in the low noise condition.  However, we find that there was
-little effect of group size in the medium noise condition.  Average performance as a function of group size in each of these conditions is shown in Figure \ref{fig:performance}.  A linear regression on the individuals in the low noise condition produces a significant positive slope of 0.0238 and a 95\% confidence interval (CI) of $[0.006,0.041]$.  A linear regression on the individuals in the medium noise condition produces a marginally significant positive slope of $0.0068$, 95\% CI $[-0.001,0.015]$, and this trend is weakened substantially with the inclusion of the single 6-person group. 
-Moreover, the marginally significant result in the medium noise condition is driven entirely by the effect of group size in one of the four distinct score fields we used.  This particular score field displays a significant effect of group size with a positive slope of 0.0306, 95\% CI: $[0.015,0.046]$, while none of the others do. Qualitative inspection revealed that this particular score field seemed to share spatial properties more similar to the low noise score fields, which may explain the strength of the effect in that particular score field.  Overall these results indicate that larger groups do tend to perform systemically better on our task than those in smaller groups, at least in the low noise
-condition.\footnote{Results were similar using a mixed-effects regression including group and score field as random effects, and also revealed larger variability due to score field in the ``medium'' noise condition than the ``low'' noise condition.}
-This effect contrasts with the lack of improvement found by \citeA{berdahl_emergent_2013} in fish groups at the same small sizes (Fig. \ref{fig:exp1_performance}B).
+Our analyses focus on two primary questions: (1) how does the introduction of a noisier environment affect collective performance, and (2) how do the selective social learning strategies identified in Experiment 2 play out in such an environment, when inferences about the success of other agents may be less reliable?
 
-In order to understand the factors that may have contributed to the increases in performance achieved by larger groups in the low noise condition, we examine the behavior of the players in our games.  We assume a simple state-based representation of player behavior.  We then attempt to identify how participants choose to occupy particular behavioral states at each point in time, and we examine the relationship between the players' decisions to occupy particular states and the performance of those players.  Specifically, we assume that at any particular point in time a player is either ``exploring'', ``exploiting'', or ``copying'' \cite<see>[for a similar classification]{rendell_why_2010}.  Conceptually, a player is exploring if that player is looking for a good location to exploit, a player is exploiting if that player has found a location where the player wants to remain, and a player is copying if that player is intending to move to the location of another player.
-We empirically determine the state of each player at each point in time using a set of hand-tuned filters. All of these filters depend only on information that is observable to any player in the game (i.e., the filters do not depend directly on the scores of any individuals), and hence we can use the inferred states of players as proxies for what other players might infer as the states of those players.  Also, since the states are not defined in terms of scores, we can meaningfully quantify the relationship between state and performance.
+\subsubsection{Effects of noise on collective performance}
+
+We begin by analyzing patterns of collective performance across groups of different sizes and across the different noise conditions.
+As our measure of performance, we computed the average score obtained by participants over the second half of the experiment.
+To test effects of performance, we constructed a mixed-effects regression model.
+We also included random effects for each group (i.e. controlling for possible correlations between participants in the same group) and for each score field (i.e. controlling for the possibility that some randomly generated score fields were more difficult than others).
+
+We found a significant interaction between group size and noise condition ($b = $). 
+As in Experiment 1, performance in the low noise condition increased significantly in larger groups.  
+However, there was less improvement with larger group size in the high noise condition (see \ref{fig:performance}). 
+Examining the simple effects of group size at each noise level reveals a significant effect of group size for the low noise condition ($b = $), and no significant effect for the high noise condition ($b = $). 
+Moreover, examining the random effects also revealed larger variability due to score field in the ``high'' noise condition than the ``low'' noise condition.
+One particular score field in the high condition displayed a significant effect of group size, while none of the others do. \todo[inline]{Check this.}
+Qualitative inspection revealed that this particular score field seemed to share spatial properties more similar to the low noise score fields (e.g. fewer local maxima).  
+
+Overall these results indicate an important role of the environment in group success: under low noise, larger groups perform systemically better on our task than smaller groups, similar to the effect found in Experiment 1, yet no such benefit is found under higher noise conditions.
+The improvement we found in the low-noise condition contrasts with the lack of any improvement found by \citeA{berdahl_emergent_2013} in fish groups at the same sizes.
+The effect of noise also contrasts with the apparent invariance to noise conditions found in fish behavior.
+
+\subsubsection{Analysis of social learning strategies}
+
+Next, in order to understand the mechanisms that may have contributed to these group size results, we more closely analyzed the behavior of the players in our games.
+Unlike in Experiment 2, where click data provided a useful measure of copying, we approached this analysis with a simple state-based representation of player behavior based on their keyboard movements.
+We empirically determine the state of each player at each point in time --- exploring, exploiting, or copying --- using a simple set of hand-specified criteria.
+All of these criteria depend only on information that is observable to any player in the game (i.e., the filters do not depend directly on the scores of any individuals), and hence we can use these states as proxies for what other players might infer.
+Also, since the states are not defined in terms of scores, we can meaningfully quantify the relationship between state and performance.
+
+Our criteria for classifying the three states are as follows.
+\begin{itemize}
+\item \emph{Exploiting} behavior was not trivial for players since the avatars always move at least at a slow
+constant velocity.  
+Unlike in the previous experiments, where the ``s'' could could be pressed to stop in place, a player in Experiment 3 could either meander around a particular location or persistently hold down one of the arrow keys while moving at a slow speed, which creates a relatively tight circular motion around a particular location.  
+We call this second activity ``spinning'' because of its distinctive appearance.  
+We then classify a player as exploiting if the player is spinning for 500ms, or if the player moves at a slow speed for 3 seconds and has not traveled more than two thirds of the possible distance that the player could have traveled in that time.
+The second condition is supposed to capture the meandering behavior of individuals who have not discovered how to spin.  
+\item \emph{Copying} behavior is more difficult to identify, but appears to often be characterized by fast directed movements towards other players. We thus classify a player as copying if the player is moving in a straight line at the fast speed towards any particular other player consistently for 500ms.
+We classify a player as moving towards another player if the second player is within $60^\circ$ on either side of the first player's straight-line trajectory.  
+\item \emph{Exploring} behavior if the player is neither exploiting nor copying. Thus a player will be classified as exploring if that player is either moving slowly but not staying in the same general location, if the player is moving quickly but not towards any particular person, or if the player is moving quickly and turning.
+\end{itemize}
 
 \begin{figure}[t!]
   \centering
@@ -566,50 +547,21 @@ We empirically determine the state of each player at each point in time using a 
   \label{fig:states}
 \end{figure}
 
-We now define the three states: exploiting, copying, and exploring.
-Exploiting a particular location in the environment is not completely
-trivial for players since the avatars always move at least at a slow
-constant velocity.  In order to attempt to stay in a single location,
-a player can either meander around a particular location or can
-persistently hold down one of the arrow keys while moving at a slow
-speed, which creates a tight circular motion around a particular
-location.  We call this second activity ``spinning'' because of its
-distinctive appearance.  We then classify a player as exploiting if
-the player is spinning for 500ms or if the player moves at the slow
-speed for 3 seconds and has not traveled more than two thirds of the
-possible distance that the player could have traveled in that time.
-The second condition is supposed to capture the meandering behavior of
-individuals who have not discovered how to spin.  Copying behavior is
-more difficult to identify, but appears to often be characterized by
-fast directed movements towards other players.  We thus classify a
-player as copying if the player is moving in a straight line at the
-fast speed towards any particular other player consistently for 500ms.
-We classify a player as moving towards another player if the second
-player is within $60^\circ$ on either side of the first player's
-straight-line trajectory.  Finally, we classify a player as exploring
-if the player is neither exploiting nor copying.  Thus a player will
-be classified as exploring if that player is either moving slowly but
-not staying in the same general location, if the player is moving
-quickly but not towards any particular person, or if the player is
-moving quickly and turning.
+\todo[inline]{rxdh: first, let's report a regression here on state proportions? And show a plot where the low \& high noise, and all groups sizes are collapsed together?}
+We use these filters to examine several properties of how players behave in our game.
+First, we compute the probability of a player being in a particular state conditional on the current score that the player is receiving.
+We find that the probability of a player occupying a particular state is closely related to that player's score.  
+Specifically, players in higher scoring locations are more likely to be exploiting than exploring or copying, but the probability that a player is exploring or copying increases as the player's score decreases.  
+These results, which are visualized in Figure \ref{fig:states}, suggest that players are choosing their states relatively rationally.  
+Players will tend to remain in good areas and will leave bad areas quickly either by exploring independently or by copying other individuals.
 
-We use these filters to analyze how players behave in our game.
-First, we compute the probability of a player being in a particular
-state conditional on the current score that the player is receiving.
-We find that the probability of a player occupying a particular state
-is closely related to that player's score.  Specifically, players in
-higher scoring locations are more likely to be exploiting than
-exploring or copying, but the probability that a player is exploring
-or copying increases as the player's score decreases.  These results,
-which are visualized in Figure \ref{fig:states}, suggest that players
-are choosing their states relatively rationally.  Players will tend to
-remain in good areas and will leave bad areas quickly either by
-exploring independently or by copying other individuals.
+\todo[inline]{rxdh: second, let's break it out by noise and group size, and analyze how these may affect strategies, suggest this may help explain gaps in scores?}
+Second paragraph with results here.
 
-
-Second, we find substantial variation in the types of copying behavior
-that different individuals display.  Some individuals appear to focus
-their copying behavior on other players who tend to have higher
+\todo[inline]{rxdh: third, we can zoom into properties of copying behavior more specifically, and revise this paragraph with the updated results (e.g. we took out the correlations of higher performance with better copying; do we want to replace it with something?)}
+Third, we find substantial variation in the types of copying behavior
+that different individuals display. 
+Some individuals appear to focus their copying behavior on other players who tend to have higher
 scores, whereas other individuals appear to be less discriminating in
 their copying behavior.  Moreover, as shown in Figure
 \ref{fig:proportion}, groups that contain individuals who focus their
@@ -622,20 +574,10 @@ to accurately infer whether another player is receiving a high score
 may be able to achieve higher performance on our task by leveraging
 these inferences to more effectively copy others.
 
-% \begin{figure}
-%   \centering
-%   \includegraphics[width=0.9\textwidth]{./figures/copy-true-proportion}
-%   \caption{Average group performance as a function of the fraction of
-%     copying in the group that consists of ``intelligent
-%     copying''---copying of an individual with a higher score.  Lines
-%     are individually fitted regression lines.}
-%   \label{fig:proportion}
-% \end{figure}
-
 \section{Discussion}
 
-\todo[inline]{Revise summary}
-Our experiments established that people display collective intelligence in a multi-agent tracking paradigm inspired by experiments conducted with fish by previous researchers, and that people display emergent collective intelligence at much smaller group sizes in our environments than fish do in the setup of prior research.  In our analyses of Experiments 2 and 3, we also confirmed that agent reasoning ability underlie the way that people achieve collective intelligence in this environment.
+\todo[inline]{rxdh: need to revise this summary to state the problem again and say briefly the contribution of each experiment.}
+Our experiments established that people display collective intelligence in a multi-agent tracking paradigm inspired by experiments conducted with fish by previous researchers, and that people display emergent collective intelligence at much smaller group sizes in our environments than fish do in the setup of prior research.  In our analyses of Experiments 2 and 3, we also confirmed selective social learning strategies allowing people to achieve collective intelligence in this environment.
 
 \paragraph{Social inference mechanisms in non-human animals.}
 
@@ -654,7 +596,7 @@ First, we found that humans were able to achieve increases in performance at muc
 Fish exhibited mild improvements in average performance at groups of 16 and more substantial improvements at groups of 64 and 128.  
 However, we see significant improvements in human performance at just five players. 
 Second, while there was no difference in the effect of group size across different environmental noise levels in fish, we found that in the small-group regime we considered, the benefits of larger group sizes only accrued in low-noise conditions.
-\todo[inline]{should we make sure to discuss this above? we could just add it as an earlier general discussion paragraph, or add an Experiment 3 discussion section before the general discussion...}
+\todo[inline]{should we make sure to discuss this above? we could just add it as an earlier general discussion paragraph... or combine this section with non-human mechanisms?}
 %This difference in the small-group regime may be at least partially explained by the differences in the mechanism that humans appear to use in this task as compared to fish.
 
 % Golden shiners prefers to spend time in dark areas of the water, presumably to avoid predators.  
@@ -703,8 +645,8 @@ The mechanisms we identify in our experiment are yet another context.
 
 Still, the quest continues for what general abilities and principles underlie the range of intricate and sophisticated forms of human collective intelligence, and distinguish those as a group from the apparently simpler, more swarm-like forms of collective intelligence found in species such as social insects or fish.  Focusing on cognitive mechanisms rather than general strategies may provide a more domain-general way to understand collective intelligence.
 
-\paragraph{Conclusion.}
-
+\paragraph{Conclusions.}
+\todo[inline]{rxdh: this needs to be lightly revised to make sure it flows with rest of argument (currently verbatim from cogsci paper). e.g. the observation about collective memory of actions might be better suited in a previous discussion paragraph?}
 Our work sheds light on one of the pressing puzzles of
 human collective intelligence and human distributed cognition.  What
 are the abilities that underlie specific mechanisms by which humans establish effective
