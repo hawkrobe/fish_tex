@@ -521,12 +521,8 @@ The conditions for removal due to inactivity or latency, and the bonusing scheme
 
 \begin{figure}[th!]
   \centering
-  \includegraphics[width=0.8\textwidth]{./figures/performance-summary}
-  \caption{Mean performance as a function of group size under different noise condition.  Error bars are 95\% bootstrap confidence
-    intervals using the group as the primary bootstrap unit.  All
-    points are averages over at least two groups.  This plot excludes
-    the single group we were able to collect of size six.  Including
-    this group weakens the trend in the medium noise condition. \andrew{Do we want to `normalize' the scores, for example, by seeing what performance they would get against 100 random score fields they did not experience, so that the reader has a sense of how much better than expected these performances are?} \rdh{This is a good idea, if it's an easy simulation for @Peaks to run?}}
+  \includegraphics[width=0.9\textwidth]{./figures/performance-summary}
+  \caption{Mean performance as a function of group size under different noise conditions.  Error bars are 95\% bootstrap confidence intervals using the group as the primary bootstrap unit.}
   \label{fig:performance}
 \end{figure}
 
@@ -538,10 +534,9 @@ Our analyses focus on two primary questions: (1) how does the introduction of a 
 
 We begin by analyzing patterns of collective performance across groups of different sizes and across the different noise conditions.
 As our measure of performance, we computed the average score obtained by participants over each half of the experiment.
-To test effects of performance, we constructed a linear regression model with main effects of group size (2 through 6), half (`first' vs. `last')  and noise condition (`low' or `high'), as well as their interactions.
-All three main effects were significant: all else being equal, scores tended to increase with group size $b=1.4, t(854)=3.9, p <0.001$, were higher in the second half compared to the first half $b=2.7,t=5.2,p<0.001$, and were higher in the low-noise condition than the high-noise condition, $b=4.1,t=-7.8,p<0.001$.
-The only significant interaction is between noise condition and group size, $b=0.89,t=2.4, p=0.018$, indicating a stronger effect of group size in the low-noise condition than the high-noise condition (see Fig.~{fig:performance}).
-\footnote{We also conducted a mixed-effects regression including random intercepts for each group (i.e. controlling for possible correlations between participants in the same group) and for each score field (i.e. controlling for the possibility that some randomly generated score fields were more difficult than others). We found that the main effects of group size, game half, and noise condition were robust $(p=0.37,p=0.001,p<0.001$, respectively) but the interaction was not significant in the mixed-effects model $b=0.22$, with the group-level random intercept accounting for the bulk of the additional variance. We thus suspect this discrepancy is due to loss in power to detect an interaction after shifting from the participant-level unit of analysis to the group-level unit of analysis, given an imbalance in participants across noise conditions; while this interaction is not crucial to our argument, it requires further investigation.}
+To test effects of performance, we constructed a linear regression model with main effects of group size (1 through 5), half (`first' vs. `last')  and noise condition (`low' or `high'), as well as their interactions.
+All three main effects were significant: all else being equal, scores tended to increase with group size, $b=1.4,~t=3.9,~p <0.001$, were higher in the second half compared to the first half, $b=2.7,~t=5.2,~p<0.001$, and were higher in the low-noise condition than the high-noise condition, $b=4.1,~t=-7.8,~p<0.001$.
+The only significant interaction was between noise condition and group size, $b=0.89,~t=2.4,~p=0.018$, indicating a stronger effect of group size in the low-noise condition than the high-noise condition (see Fig.~\ref{fig:performance}).\footnote{We also conducted a mixed-effects regression including random intercepts for each group (i.e. controlling for possible correlations between participants in the same group) and for each score field (i.e. controlling for the possibility that some randomly generated score fields were more difficult than others). We found that the main effects of group size, game half, and noise condition were robust $(p=0.037,p=0.001,p<0.001$, respectively) but the interaction was no longer significant, $p=0.23$, with the group-level random intercept accounting for the bulk of the additional variance. We suspect this discrepancy is due to dramatic loss in power to detect an interaction after shifting from the participant-level unit of analysis to the group-level unit of analysis, especially given imbalances in sample sizes across noise conditions. Thus, we believe this effect merits further investigation.}
 % We found a significant interaction between group size and noise condition ($b = $). 
 % As in Experiment 1, performance in the low noise condition increased significantly in larger groups.  
 % However, there was less improvement with larger group size in the high noise condition (see \ref{fig:performance}). 
@@ -549,18 +544,17 @@ The only significant interaction is between noise condition and group size, $b=0
 % One particular score field in the high condition displayed a significant effect of group size, while none of the others do. 
 % Qualitative inspection revealed that this particular score field seemed to share spatial properties more similar to the low noise score fields (e.g. fewer local maxima).  
 % \todo[inline]{Double-check this?}
-Overall these results indicate an important role of the environment in group success: under low environmental noise, larger groups perform systemically better on our task than smaller groups, similar to the effect found in Experiment 1, yet .
-\andrew{Do you think this is due to mini `reward zones' being small and ephemeral, (rather than just the big blob), so that even if you copy, by the time you get over there, it is gone? Duration of spin events vs noise? Distance of spin even from center of blob?}
+Overall these results indicate an important role of the environment in group success: under low noise, larger groups perform systemically better than smaller groups, similar to the effect found in Experiment 1, yet this advantage appears to be weaker under high noise.
 %The improvement we found in the low-noise condition contrasts with the lack of any improvement found by \citeA{berdahl_emergent_2013} in fish groups at the same sizes.
 %The effect of noise also contrasts with the apparent invariance to noise conditions found in fish behavior.
 
 \subsubsection{Analysis of social learning strategies}
 
-Next, in order to understand the mechanisms that may have contributed to these effects of noise on collective performance, we more closely analyzed the behavior of the players in our games.
-Unlike in Experiment 2, where click data provided a useful measure of copying, we approached this analysis with a simple state-based representation of player behavior based on their keyboard movements.
-We empirically determine the state of each player at each point in time --- exploring, exploiting, or copying --- using a simple set of hand-specified criteria.
-All of these criteria depend only on information that is observable to any player in the game (i.e., the filters do not depend directly on the scores of any individuals), and hence we can use these states as proxies for what other players might infer.
-Also, since the states are not defined in terms of scores, we can meaningfully quantify the relationship between state and performance.
+In order to understand the mechanisms that may have contributed to effects of noise on collective performance, we more closely analyzed the underlying behavior of the players in our games.
+While we relied on click data as a useful measure of copying in Experiment 2, here used a simple \emph{state-based} representation of player behavior based on their keyboard actions.
+We empirically determined the state of each player at each point in time --- exploring, exploiting, or copying --- using a simple set of hand-specified criteria.
+All of these criteria depended only on information that was observable to players in the game (i.e., the filters do not depend directly on the hidden scores of other individuals), and hence we can use these states as proxies for what players might be able to infer.
+Additionally, because the states are not defined in terms of score values, we can meaningfully quantify the relationship between state and performance.
 
 Our criteria for classifying the three states are as follows.
 \begin{itemize}
@@ -568,7 +562,7 @@ Our criteria for classifying the three states are as follows.
 Unlike in the previous experiments, where the ``s'' could could be pressed to stop in place, a player in Experiment 3 could either meander around a particular location or persistently hold down one of the arrow keys while moving at a slow speed, which creates a relatively tight circular motion around a particular location.  
 We call this second activity ``spinning'' because of its distinctive appearance.  
 We then classify a player as exploiting if the player is spinning for 1 second, or if the player moves at a slow speed for 3 seconds and has not traveled more than two thirds of the possible distance that the player could have traveled in that time.
-The second condition is captures the meandering behavior of individuals who have not discovered how to spin. \andrew{Is there evidence that any players learned to spin from others? That would be a cute side story: social learning of a mechanism that leads to emergent collective sensing} 
+The second condition is captures the meandering behavior of individuals who have not discovered how to spin.
 \item \emph{Copying} behavior is more difficult to identify, but is likely characterized by directed movements towards other players. 
 We thus classify a player as copying if they move at the fast speed in a straight line towards any particular other player for a 500ms window.
 We consider a player to be moving towards another player if the second player is within a $60^\circ$ on either side of the first player's straight-line trajectory.
