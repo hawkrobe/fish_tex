@@ -61,10 +61,10 @@ Joshua B. Tenenbaum (jbt@mit.edu)$^*$
 %Some have   
 
 %Collective intelligence is the study of 
-\todo[inline]{pk: we are confounding literature on small/large populations, as well as literature on collective intelligence versus cultural evolution}
-Groups of agents are capable of solving problems that no individual can solve alone. \andrew{Yes, but grouping can also enhance abilities that they already have on their own.  Not sure which is going on here...} 
-A variety of simple individual strategies have been proposed to explain such collective intelligence in both humans and non-human animals, such as copying successful individuals or copying when uncertain. 
-Yet the cognitive abilities supporting these strategies remain poorly understood.
+% \todo[inline]{pk: we are confounding literature on small/large populations, as well as literature on collective intelligence versus cultural evolution}
+% Groups of agents are capable of solving problems that no individual can solve alone. \andrew{Yes, but grouping can also enhance abilities that they already have on their own.  Not sure which is going on here...} 
+A variety of simple strategies have been proposed to explain collective intelligence in both humans and non-human animals, such as copying successful individuals or copying when uncertain. 
+Yet the cognitive abilities supporting these strategies in collectives remain poorly understood.
 Here, we propose that social reasoning plays an important role allowing latent properties like ``success'' to be flexibly inferred from outward behavior, such that social learning can be balanced with exploration. 
 %While intelligent behavior emerges only at large group sizes for many nonhuman species (e.g. fish or insects), humans rapidly benefit from social interaction even in small teams. 
 %In this paper, we take a comparative approach to identify candidate  mechanisms of social cognition that may account for distinctively human forms of collective intelligence. 
@@ -162,10 +162,8 @@ A group who all know who knows what can be quite effective at solving problems t
 %Groups are not only able to distribute complex computations across agents more effectively \cite{hutchins_cognition_1995} --- new emergent processes arise from interactions between agents. 
 %When agents can observe and learn from one another, they no longer need to independently obtain all of their information from direct experience with the world. 
 %Social learning thus allows the group as a whole to cumulatively build on individual successes, and is considered to be a key process driving collective intelligence \cite{boyd2011cultural,tomasello_natural_2014, laland2017darwin}. 
-%\todo[inline]{jumping into details (need model paper...?). don't bury the RQ}
 
 % Paragraph 2 topic sentence: social learning needs to be *selective* to be effective, and when/who heuristics are one way of achieving selectivity.
-\todo[inline]{rdh: given space constraints, I think this point can be condensed into previous or following paragraph?}
 The study of social learning examines how people and other animals make use of information from others around them.
 A large body of work in human and non-human animals has focused on what strategies, or heuristics, allow social learning to be effective \cite{laland_social_2004,hoppitt2013social,RendellFogarty___Laland11_CognitiveCulture}. 
 Indiscriminate copying, for example, is not an effective strategy. 
@@ -519,9 +517,9 @@ The procedure was similar to Experiment 1: after successfully completing a compr
 Participants were not given any practice rounds, or any information about the nature of the underlying score fields.
 The conditions for removal due to inactivity or latency, and the bonusing scheme, were also similar to Experiment 1 with slightly different parameters.
 
-\begin{figure}[th!]
+\begin{figure}[t!]
   \centering
-  \includegraphics[width=0.9\textwidth]{./figures/performance-summary}
+  \includegraphics[width=0.95\textwidth]{./figures/performance-summary}
   \caption{Mean performance as a function of group size under different noise conditions.  Error bars are 95\% bootstrap confidence intervals using the group as the primary bootstrap unit.}
   \label{fig:performance}
 \end{figure}
@@ -572,35 +570,33 @@ We consider a player to be moving towards another player if the second player is
 \begin{figure}[t!]
   \centering
   \includegraphics[width=0.8\textwidth]{./figures/new_states}
-  \caption{(A) The probability of an individual being in a particular behavioral state as a function of the individual's score, combined across both conditions. (B) The probability of }
+  \caption{(A) The probability of an individual being in a particular behavioral state as a function of the individual's score, combined across both conditions. (B) Participants tended to begin exploiting at lower background values in the high-noise condition, leading to less copying and exploration.}
   \label{fig:states}
 \end{figure}
 
-\todo[inline]{rxdh: first, let's report a multinomial regression here on the state proportions? And show a plot where the low \& high noise, and all groups sizes are collapsed together as first panel of Fig.?}
 We now proceed to use this classification scheme to analyze the behavioral strategies used by participants in our game.
 First, in line with our finding in Experiment 2 that participants inhibit copying when they find themselves in high-scoring regions, we predicted that the probability of the exploiting state would increase as players receive higher scores.  
-To test this prediction, we constructed a multinomial mixed-effects regression model predicting the probability that each individual is in each of the three states at each point in the game. 
-We included fixed effects of current background score, noise condition, and group size, as well as random intercepts for each group and background field.
-We found that the probability of a player occupying a particular state is closely related to that player's score (see Fig.~\ref{fig:states}A). 
-Specifically, players are significantly more likely to be in the exploiting state in higher scoring locations than in lower scoring locations ($b=$, $p=$).
-This selectivity in exploiting behavior has the adaptive property that players will tend to remain in good areas and will leave bad areas quickly either by exploring independently or by copying other individuals.
+To test this prediction, we constructed a logistic mixed-effects regression model predicting the probability that each individual is in the `exploiting' state at each time step. 
+We included fixed effects of their current background score and noise condition, as well as their interaction.
+We also included random intercepts for each group and score field.
+First, we found a strong main effect of the current score: regardless of noise condition, players are significantly more likely to exploit in higher scoring locations than in lower scoring locations, $b=3.2,~z=310,p<0.001$  (see Fig.~\ref{fig:states}A).
+Selective exploiting is clearly adaptive, as players will tend to remain in high scoring regions but quickly move away from low scoring regions either by exploring independently or by copying other individuals.
+At the same time, strategies differed dramatically across noise conditions: we find a significant main effect of noise, $b=0.3,~z=3.7,~p<0.001$, indicating that participants are significantly more likely to engage in exploitation in the high noise condition at all background values.
+We also found a significant interaction between condition and background value, $b=-0.3,~z=-33,~p<0.001$, indicating that the increased likelihood of exploitation is especially pronounced at lower background values (see Fig.~\ref{fig:states}B).
+Similar regressions predicting the probability of `copying' and `exploring' states found that participants were also \emph{less} likely to be exploring, $b=0.26,~z=27,~p<0.001$, and \emph{more} likely to be copying, $b=0.08,~z=6.2,~p<0.001$, at lower point values.
 
-
-\todo[inline]{rxdh: look at duration of spins, and distance of spin from the blob center?}
-
-
-\todo[inline]{rxdh: second, let's break it out by noise and group size for second panel of Fig., and analyze how environmental noise conditions may affect strategies, suggest this may help explain gaps in scores?}\andrew{Yup! Great idea.}
-Second, we examine how the deployment of these behavioral states may vary with higher or lower noise in the environment. 
-In the same regression model, we examine the effect of noise condition and find that participants are significantly more likely to be exploiting in the high noise condition, even at lower values ($b=, p=$; see Fig.~\ref{fig:states}B), and thus less likely to be copying or exploring overall.
-A lower threshold for exploiting may help explain the gaps in collective performance across noise conditions, as it also makes copying less effective: the external signatures of exploiting (e.g. ``spinning'' behavior) are less strong evidence for inferences of success. \andrew{yes cool, so in the high noise, there might be less tendency to copy, but also less opportunity to copy due to less spinning.  Wait, can we get at the less tendency to copy, independent of the reduced opportunity?}
-
-\todo[inline]{rxdh: third, we can zoom into properties of copying behavior more specifically, and revise this paragraph with the updated results (e.g. we took out the correlations of higher performance with better copying; do we want to replace it with something more specifically related to Exp. 2? Like showing the *targets* of copying tend to be in higher scoring regions?)}
-Third, while our previous analyses focused primarily on the exploiting state, we now turn to analyzing the properties of copying. 
-In Experiment 2, we found that participants did not copy indiscriminately but were able to selectively copy players receiving high rewards, even though these rewards were not directly visible. 
-In this experiment, we likewise examined the scores of the players who are being copied.
-\textbf{Result here...}
-Moreover, as shown in Figure \ref{fig:proportion}, groups that contain individuals who focus their copying behavior on higher scoring individuals achieve significantly higher performance in our task (slope: 0.2639, 95\% CI: $[0.145,  0.383]$). 
-A player who is able to accurately infer whether another player is receiving a high score may be able to achieve higher performance on our task by leveraging these inferences to more effectively copy others.
+A lower threshold for exploitation may also help explain gaps in collective performance across noise conditions. 
+First, a willingness to exploit at lower point values may, by definition, lead to lower overall performance. 
+Second, it may make copying less effective, preventing social learning mechanisms from improving performance in larger groups.
+That is, if players are willing to exploit at lower background values, then external cues of exploiting (i.e. ``spinning'' behavior) will provide statistically weaker evidence of underlying success.
+To test this hypothesis, we identified all of the events in our dataset where one player copied another and measured the current score of the target of copying.
+We found that targets of copying tend to be in lower scoring regions in the high-noise condition, $d=0.08,~t=4.02,~p<0.001$.
+These results clarify the interaction between human social learning strategies and environmental conditions, and raise interesting questions about the robustness of social inference based copying.
+We discuss these questions in more detail below.
+%In Experiment 2, we found that participants did not copy indiscriminately but were able to selectively copy players receiving high rewards, even though these rewards were not directly visible. 
+%In this experiment, we likewise examined the scores of the players who are being copied.
+% Moreover, as shown in Figure \ref{fig:proportion}, groups that contain individuals who focus their copying behavior on higher scoring individuals achieve significantly higher performance in our task (slope: 0.2639, 95\% CI: $[0.145,  0.383]$). 
+% A player who is able to accurately infer whether another player is receiving a high score may be able to achieve higher performance on our task by leveraging these inferences to more effectively copy others.
 
 \section{Discussion}
 
