@@ -30,7 +30,6 @@
 \author{
 Robert Hawkins (rdhawkins@princeton.edu)\thanks{Department of Psychology, Princeton University}\\
 Andrew M. Berdahl (berdahl@uw.edu)\thanks{School of Aquatic and Fishery Sciences, University of Washington}\\
-Hongbo Fang (hongbofa@andrew.cmu.edu)\thanks{Department of Computer Science, Carnegie Mellon University}\\
 Alex ``Sandy'' Pentland (pentland@mit.edu)\thanks{MIT Media Lab}\\
 Noah D. Goodman (ngoodman@stanford.edu)\thanks{Department of Psychology, Stanford University}\\
 Joshua B. Tenenbaum (jbt@mit.edu)\thanks{Department of Brain and Cognitive Sciences, Massachusetts Institute of Technology}\\
@@ -191,7 +190,8 @@ By inverting a generative model of behavior \cite<e.g.>{jara2016naive,baker2017r
 
 % Paragraph 5 topic sentence: in fact, recent cognitive science has extensively worked out how these mechanisms work in *individual* social learning experiments, but implications for groups & collective intelligence remain unclear
 This ability has been extensively studied in cognitive science.
-Even young children are able to rapidly infer which partners are more trustworthy and knowledgeable than others, and prefer to learn from them \cite{wood2013whom,sobel2013knowledge,gweon2014sins,poulin2016developmental,harris2018cognitive,mills2016learning}, and adults can appropriately discount unreliable social information in their decision-making \cite{hawthorne2019reasoning,velez2019integrating,WhalenEtAl18_SensitivityToSharedInfo}.
+Even young children are able to rapidly infer which partners are more trustworthy and knowledgeable than others, and prefer to learn from them \cite{wood2013whom,sobel2013knowledge,poulin2016developmental,mills2016learning}, % gweon2014sins, harris2018cognitive
+ and adults can appropriately discount unreliable social information in their decision-making \cite{hawthorne2019reasoning,velez2019integrating,WhalenEtAl18_SensitivityToSharedInfo}.
 However, this cognitive science literature has largely developed independently from work on social learning strategies in larger collectives.
 Previous work in animals has suggested that inferences about underlying cues may prevent costly and erroneous cascades of behavior \cite{bikhchandani1998learning,giraldeau2002potential}, but the broader implications of social inference abilities for collective intelligence remain unclear.
 
@@ -249,9 +249,9 @@ Taken together, this work suggests that even in novel environments where the pay
 \section{Experiment 1: Collective sensing across group sizes}
 
 \subsection{Participants}
-We recruited 781 unique participants from Amazon Mechanical Turk to participate in this experiment.  All participants were from the United States.  After excluding 52 participants due to inactivity or latency, and 9 others for disconnecting in the first half of the game, we were left with usable data from 720 participants in 312 groups.  These groups ranged in size from one to six individuals. 
+We recruited 781 unique participants from Amazon Mechanical Turk to participate in an interactive web experiment \cite{hawkins_conducting_2014}.  All participants were from the United States.  After excluding 52 participants due to inactivity or latency, and 9 others for disconnecting in the first half of the game, we were left with usable data from 720 participants in 312 groups.  These groups ranged in size from one to six individuals. 
 
-\subsection{Stimuli and Interface}
+\subsection{Stimuli and Procedure}
 
 \begin{figure}[t!]
   \centering
@@ -261,53 +261,24 @@ We recruited 781 unique participants from Amazon Mechanical Turk to participate 
   \label{fig:score}
 \end{figure}
 
-The virtual game environment measured 480 pixels in width and 285 pixels in height.
-Avatars were represented by triangles that were 10 pixels in length and 5 pixels in width, rotated to the direction the avatar is facing. 
-Participants controlled their avatars by clicking and using two keyboard keys. 
-Clicking within the playing area instantly oriented the direction of the avatar to be facing the location clicked. 
+Participants controlled avatars in a rectangular virtual environment by clicking and using two keyboard keys. 
+Avatars automatically moved forward, and clicking within the playing area instantly oriented the avatar to move toward the clicked location. 
 Participants could hold the ``a" key to accelerate or hold down the ``s" key to stop.  
-The avatars automatically moved forward at a constant velocity of 17 pixels per second if no buttons were pressed, but instantaneously increased to a constant velocity of 57 pixels per second for the duration of time that the ``a" key was held down and decreased to 0 pixels per second for the duration of time the "s" key was held down. 
-
 We designed the environment as a multi-agent tracking task (Fig. \ref{fig:score}).
-The score that agents obtained at each location at each point in time was determined by an underlying ``score field.'' 
+The score that agents obtained at each location at each point in time was determined by an underlying ``score field,'' which was generated by slowly moving a circular ``spotlight'' along paths between randomly chosen locations.
 This field was hidden from participants, who only had access to the score at their current location. 
-We generated score fields by first initializing a circular region with a diameter of 50 pixels at a random location on the playing area. 
-Inside this region, the score was set to 1.
-Outside this region, the score was set to 0.
-We then moved this region along a straight line to a randomly chosen target location within the playing area at a speed of 17 pixels per second.
-Once it reached this location, we selected another target location, and repeated the process for the duration of the experiment.
 We pre-generated 5 such score fields, so multiple groups were randomly assigned to the same underlying field.  
 
-Because these simple score fields were binary (i.e. either inside or outside the circular scoring region), we showed participants binary feedback about their current score.
-When an avatar entered the circular region, it was surrounded by a salient sparkling halo and the border of the playing area turned green (see supplementary Fig. \ref{fig:supplemental_interface} for screenshots). 
+These simple score fields were binary (i.e. 1 inside the circular scoring region and 0 everywhere else), so we showed participants binary feedback about their current score.
+When an avatar entered the circular region, it was surrounded by a salient sparkling halo and the border of the playing area turned green (see supplementary Fig. S1 for screenshots). 
 Critically, this feedback was only visible to the participant controlling that avatar; participants did \emph{not} directly observe whether other participants were in the scoring region. 
-They could only see the spatial location and orientation of other participants.
+They could only see the spatial location and orientation of other participants, updating in real time.
 
-Each participant played in a single continuous game lasting for 5 minutes, and locations were updated every 125 milliseconds; participants thus saw all other participants moving in real time. 
-To discourage inactivity, participants also received 2/3 of a point for each second they were actively participating in the game.
-For any moment when an avatar was touching a wall, we displayed a large warning message and set the participant's current score to zero so that they stopped accumulating points.
+After successfully completing a comprehension test, participants were redirected to a waiting room.
+Each waiting room was assigned a group size between 1 and 6, and the game began as soon as the target number of participants was reached, or after 5 minutes of waiting, whichever came first.
+Participants then played a single continuous game lasting for 5 minutes, and were paid a bonus proportional to the total score they (individually) accrued.
 
-\subsection{Procedure}
-
-After agreeing to participate in our experiment, participants were presented with a set of instructions describing the mechanics of the game, using a cover story framing the game as a search for the ``magical bonus region".  
-The participants were informed about the dynamics of the underlying score field and also explicitly informed that ``There is no competition between players; the magical region is not consumed by players. It simply changes location over time." 
-Participants were not explicitly instructed or suggested to cooperate or coordinate with each other.
-
-After successfully completing a comprehension test, participants were then redirected to a waiting room.
-For each waiting room we started, we randomly sampled a target group size between 1 and 6.
-Participants would wait for up to 5 minutes or until the pre-assigned number of other participants joined.
-While in the waiting room, participants could familiarize themselves with the controls of the game.  Participants were not shown any score in
-the waiting room unless the participant was against a wall, in which
-case the border of the playing region would turn red and a warning appeared on screen.  All participants spent at least one minute in the waiting room to help ensure familiarity with the controls before starting the game. 
-
-Both in the waiting room and the actual game, participants were removed for inactivity if we detected that they had switched to another browser tab for more than 30 seconds total throughout the game or if the participant's avatar was moving into a wall for 30 consecutive seconds.  
-We also removed participants if their ping response latencies were greater than 125ms for more than 75 seconds in total throughout the game.  
-To minimize disruption of large groups, we allowed multi-participant games to continue after a participant disconnected or was removed, as long as at one or more participants remained.
-
-We paid participants 75 cents for completing our instructions and comprehension checks, and the participants could receive a bonus of up to \$1.25 during the five minutes of gameplay. Each point in the game corresponded to \$0.01 of bonus. Each participant was also paid 15 cents per minute for any time spent in the waiting room, minus any time that participant spent moving into a wall.  These numbers were chosen so that the participants were expected to receive at least a wage of \$9 per hour for the totality of their time active in the
-experiment.
-
-We implemented this experiment using the MWERT framework \cite{hawkins_conducting_2014}, which uses a stack of recent web technologies capable of handling the challenges of real-time, multi-participant web experiments, including Node.js, the Socket.io module, and HTML5 canvases.  
+See Appendix B in Supplementary Materials for further details of our stimuli and procedures.
 
 \begin{figure}[t!]
   \centering
@@ -367,19 +338,7 @@ These scenarios carefully controlled score field dynamics and bot behaviors.
   \label{fig:exp2_design}
 \end{figure}
 
-\paragraph{Practice phase}
-
-To acclimate participants to the task environment, each game began with four one-minute long practice rounds. 
-In the first and third practice rounds, the score field was \emph{visible} to the participant so they could observe its dynamics.
-In the second and fourth practice rounds, the score field was invisible to the participants, as in Experiment 1. 
-Additionally, we randomized participants into two different groups, who practiced with different score field dynamics. 
-In a ``wall-following'' pattern, the high scoring region moved contiguously along the walls of the playing area. 
-In a ``random-walk'' pattern, the high scoring region slowly drifted, as in Experiment 1, from one random location to another within the playing region.
-Because we did not observe substantial differences in participant behavior depending on the score field dynamics observed during the practice phase, we collapsed over this factor in our analyses.
-
-\paragraph{Test phase}
-
-After the four initial practice rounds, participants played two one-minute test rounds that were the focus of our analyses. 
+After four one-minute practice rounds, where no other agents were present (see Appendix C in our Supplementary Materials for more details), participants were placed in two one-minute test rounds that were the focus of our analyses. 
 In one of the two test rounds, no other agents were present (non-social condition), and in the other there were four bots in the environment (social condition). 
 We randomized the order of social and non-social conditions across participants. 
 Each of these rounds was further divided into three conditions, where we causally intervened on the score fields to better test our hypotheses about exploring, copying, and exploiting behavior. 
@@ -433,7 +392,7 @@ Finally, \emph{independence} was defined by reverse-coding a preference for movi
 The endpoints of the scale roughly represented the proportion of time the participant spent displaying the behavior in question compared to the potentially available opportunities to do so. 
 
 The two coders achieved a correlation of $r = 0.75$ for selectivity, $r = 0.55$ for eagerness, and $r = 0.60$ for independence. The coders resolved disagreements in our codes by averaging. 
-First, we found that a substantial fraction of participants display selective copying behavior and independence (Supplemental Fig. \ref{fig:selective}). 
+First, we found that a substantial fraction of participants display selective copying behavior and independence (Supplemental Fig. S2). 
 %\todo[inline]{rdh: Is it appropriate to use 0.5 as the null threshold? Do we think that midpoint is meaningful, since even lower numbers, e.g. 0.2, were indicative of some level of these signatures? Maybe should be comparing to a null of 0?}
 We found that 71\% of participants had an average selectivity rating of at least 0.5, and 86\% had an average independence rating above that level. 
 These proportions were significantly greater than 50\% using a two-sided binomial test, $p = 0.036$ and $p = 0.001$, respectively.  
@@ -493,21 +452,18 @@ These more complex fields were generated using the method reported by \citeA{ber
 We began with the same randomly moving ``spotlight'' of high value as before. 
 However, we then combined the spotlight with a field of spatially correlated, temporally varying noise.  
 By manipulating the proportional weighting of the noise field and the spotlight, we generated two different conditions, corresponding to two of the noise levels used by \citeauthor{berdahl_emergent_2013}. 
-In the \emph{low noise} condition, the spotlight was weighted strongly compared to the noise field (10\% noise), with the noise field providing minor background variation (see Supplemental Fig. \ref{fig:score_exp3}, left). 
-In the \emph{high noise} condition, the weighting of the noise field was increased (25\% noise), providing more extreme fluctuation outside of the spotlight (see Supplemental Fig. \ref{fig:score_exp3}, right).
+In the \emph{low noise} condition, the spotlight was weighted strongly compared to the noise field (10\% noise), with the noise field providing minor background variation (see Supplemental Fig. S3, left). 
+In the \emph{high noise} condition, the weighting of the noise field was increased (25\% noise), providing more extreme fluctuation outside of the spotlight (see Supplemental Fig. S3, right).
 To decrease variability and increase statistical power, we generated only four distinct score fields per noise level, so multiple groups experienced the same fields.  
 
 In addition to these more complex score fields, we made several adjustments to the interface.
-First, rather than showing their current score as binary---a glowing halo around the participant when inside the spotlight---their score was presented as a percentage at the top of the playing area (see Supplemental Fig.~\ref{fig:exp3_interface} for a screenshot).
+First, rather than showing their current score as binary---a glowing halo around the participant when inside the spotlight---their score was presented as a percentage at the top of the playing area (see Supplemental Fig. S5 for a screenshot).
 Second, rather than clicking to change direction, participants controlled their avatars using their keyboard. 
 The left and right arrow keys were used to turn (at a rate of $40^\circ$ per second) and the
 spacebar was used to accelerate. 
 Unlike before, we did not provide a mechanism to stop completely.  
 Given the closer relation to \citeA{berdahl_emergent_2013} in this experiment, it is also relevant that the speeds of the avatars and the playing area dimensions ($480 \times 285$) throughout all of our experiments were matched to those reported by Berdahl et al.; in this experiment, we additionally used the same total task length of six minutes.
-
-The procedure was similar to Experiment 1: after successfully completing a comprehension test,  participants were redirected to a waiting room where they could get used to the controls.  
-Participants were not given any practice rounds, or any information about the nature of the underlying score fields.
-The conditions for removal due to inactivity or latency, and the bonusing scheme, were also similar to Experiment 1 with slightly different parameters.
+The procedure was otherwise identical to Experiment 1.
 
 \begin{figure}[t!]
   \centering
@@ -543,31 +499,18 @@ Overall these results indicate an important role of the environment in group suc
 
 In order to understand the mechanisms that may have contributed to effects of noise on collective performance, we more closely analyzed the underlying behavior of the participants in our games.
 While we relied on click data as a useful measure of copying in Experiment 2, here used a simple \emph{state-based} representation of participant behavior based on their keyboard actions.
-We empirically determined the state of each participant at each point in time --- exploring, exploiting, or copying --- using a simple set of hand-specified criteria.
+We empirically determined the state of each participant at each point in time --- exploring, exploiting, or copying --- using a simple set of hand-specified criteria (see Appendix D in our Supplementary Materials for details).
 All of these criteria depended only on information that was observable to participants in the game (i.e., the filters do not depend directly on the hidden scores of other individuals), and hence we can use these states as proxies for what participants might be able to infer.
 Additionally, because the states are not defined in terms of score values, we can meaningfully quantify the relationship between state and performance.
 
-Our criteria for classifying the three states are as follows.
-\begin{itemize}
-\item \emph{Exploiting} behavior was not trivial for participants since the avatars always move at least at a slow constant velocity. 
-Unlike in the previous experiments, where the ``s'' could could be pressed to stop in place, a participant in Experiment 3 could either meander around a particular location or persistently hold down one of the arrow keys while moving at a slow speed, which creates a relatively tight circular motion around a particular location.  
-We call this second activity ``spinning'' because of its distinctive appearance.  
-We then classify a participant as exploiting if the participant is spinning for 1 second, or if the participant moves at a slow speed for 3 seconds and has not traveled more than two thirds of the possible distance that the participant could have traveled in that time.
-The second condition is captures the meandering behavior of individuals who have not discovered how to spin.
-\item \emph{Copying} behavior is more difficult to identify, but is likely characterized by directed movements towards other participants. 
-We thus classify a participant as copying if they move at the fast speed in a straight line towards any particular other participant for a 500ms window.
-We consider a participant to be moving towards another participant if the second participant is within a $60^\circ$ on either side of the first participant's straight-line trajectory.
-\item We classify behavior as \emph{exploring} if the participant is neither exploiting nor copying. Thus, a participant will be classified as exploring if that participant is either moving slowly but not staying in the same general location, if the participant is moving quickly but not towards any particular person, or if the participant is moving quickly and turning.
-\end{itemize}
-
 \begin{figure}[t!]
   \centering
-  \includegraphics[width=0.8\textwidth]{./figures/new_states}
+  \includegraphics[width=0.6\textwidth]{./figures/new_states}
   \caption{(A) The probability of an individual being in a particular behavioral state as a function of the individual's score, combined across both conditions. (B) Participants tended to begin exploiting at lower background values in the high-noise condition, leading to less copying and exploration.}
   \label{fig:states}
 \end{figure}
 
-We now proceed to use this classification scheme to analyze the behavioral strategies used by participants in our game.
+We now proceed to use these state classifications to analyze the behavioral strategies used by participants in our game.
 First, in line with our finding in Experiment 2 that participants inhibit copying when they find themselves in high-scoring regions, we predicted that the probability of the exploiting state would increase as participants receive higher scores.  
 To test this prediction, we constructed a logistic mixed-effects regression model predicting the probability that each individual is in the `exploiting' state at each time step. 
 We included fixed effects of their current background score and noise condition, as well as their interaction.
@@ -612,7 +555,7 @@ Our study design was inspired by a collective sensing task used in the animal be
 We found similar improvements in performance as a function of group size in humans, suggesting that the general phenomenon of collective sensing persists across different species \cite{berdahl2018collective}.
 However,  the mechanisms driving the collective sensing appear to be very different between the fish and humans. 
 In fish schools, resource-level-dependant speed modulation induced group-level turning toward high-resource areas, while humans were led to these high-resource areas via strategic copying based on the inferred performance of others.
-These differences support recent work in social learning \cite{wisdom_social_2013, mcelreath_beyond_2008}, which find flexibility in the strategic deployment of imitation in humans. Appendix A provides one plausible model that could describe the form of selective copying we observe.
+These differences support recent work in social learning \cite{wisdom_social_2013, mcelreath_beyond_2008}, which find flexibility in the strategic deployment of imitation in humans. Appendix A in our Supplementary Materials provides one plausible model that could describe the form of selective copying we observe.
 
 %comparison to fish II
 Differences in the group performance versus group size between fish and humans reveals a potential trade-off between the underlying mechanisms. 
@@ -758,12 +701,6 @@ The picture of collective intelligence in humans and across specifies that is em
 %% core form the body of the group and the exploring individuals form the
 %% sticky appendages that drive the group's gradual crawl.
 
-\section{Ethics}
-
-\small
-
-The research was reviewed and approved by the MIT Committee on the Use of Humans as Experimental Subjects (COUHES), Protocol #1509172301, as well as the Oxford Internet Institute Departmental Research Ethics Committee (DREC), CUREC 1A Research Ethics Approval Ref Number SSH\_OII\_CIA\_20\_002.
-
 \section{Acknowledgments}
 
 \small
@@ -776,25 +713,12 @@ the authors(s) and do not necessarily reflect the views of the
 National Science Foundation.  This material is based upon work
 supported by the Center for Minds, Brains and Machines (CBMM), funded
 by NSF STC award CCF-1231216.
-We are grateful to Colin Torney for providing the code to make the score field gradients.
+Special thanks to Colin Torney for providing the code to make the score field gradients, to Hongbo Fang for assisting in validating our qualitative coding, and Robert Goldstone for helpful feedback on the interpretation of our results.
 
-\section{Competing Interests}
+ 
+\begin{comment}
 
-\small
-
-The authors declare no competing interests.
-
-\section{Data Accessibility}
-
-\small
-
-Data, experiment code, and analysis code are available at \url{https://github.com/hawkrobe/fish}.
-
-\section{Author Contributions}
-
-\small
-
-RH, PK, AP, NG, and JT formulated  the study. RH and PK designed the experiments, implemented the experiments, and analyzed the data. HF assisted with data analysis. RH, PK, and AB wrote the manuscript. PK is the acknowledged head of the writing team. All authors gave final approval for publication and agree to be held accountable for the work performed therein.
+\end{comment}
 
 \bibliographystyle{apacite}
 
@@ -806,113 +730,6 @@ RH, PK, AP, NG, and JT formulated  the study. RH and PK designed the experiments
 }
 
 
-\section*{Appendix A: Behavioral Model}
 
-The trends we observe suggest a potential set of behavioral mechanisms
-that participants may be using in our task.  We propose that each
-participant chooses an exploring, exploiting, or copying state based on the following
-rules:
-\begin{enumerate}
-\item
-  If the participant is in a high scoring area, the participant will remain in that area
-  exploiting.
-\item
-  If the participant is in a low scoring area and the participant perceives another
-  person as possibly having a higher score, the participant may choose to
-  copy that person.
-\item
-  Otherwise the participant will explore independently.
-\end{enumerate}
-
-This model displays intriguing collective behavior in the score fields that have a smoothly moving high scoring region.
-When any individual finds a high scoring area, that participant will attract the
-other participants to that location by exploiting.  Then such slowly evolving environments, when all the
-participants are together in a group exploiting a particular area, one of
-the participants will receive a lower score as the score field shifts.  This
-participant will then either move closer to the others who are still
-exploiting or will shift to an exploring state.  If that participant starts
-exploring but doesn't find any high scoring locations, the participant will return
-to the group if the group is still exploiting.  If that participant does
-find a new high scoring area, though, the participant will start exploiting that
-area.  The rest of the group will then follow after the highest
-scoring region shifts to where the exploiting participant is.  This
-mechanism creates a kind of gradual crawling that effectively tracks
-the moving score field.  Thus, by using this mechanism participants are
-improving both their own performances directly and also that of the
-entire group by participating in this process of emergent collective
-sensing.  An example of this process occurring in participant gameplay
-is shown in Figure \ref{fig:example}, and in our Supplementary Videos.
-
-
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.45\textwidth]{./figures/experiment-3-no-score}
-\includegraphics[width=0.45\textwidth]{./figures/experiment-3-wall}
-  \includegraphics[width=0.5\textwidth]{./figures/experiment-3-score}
-  \hspace{0.1cm}
-  \caption{Examples of Experiment 1 interface.}
-  \label{fig:supplemental_interface}
-\end{figure}
-
-\begin{figure}[t!]
-    \centering
-    \includegraphics[width=0.9\linewidth]{figures/coding.pdf}
-    \caption{Distribution of ratings for three qualitative behavioral properties that were coded from videos in Experiment 2. Participants displayed relatively high levels of selective copying behavior and independent exploration, while eager copying is less common.}
-    \label{fig:selective}
-\end{figure}
-
-
-\begin{figure}[b!]
-  \centering
-  \includegraphics[width=0.4\textwidth]{./figures/easy-field}
-  \hspace{0.1cm}
-  \includegraphics[width=0.4\textwidth]{./figures/medium-field}
-  \caption{Example snapshots of score fields from the low noise (left) and high noise (right) conditions used in Experiment 3.  Red areas indicate higher scoring areas.}
-  \label{fig:score_exp3}
-\end{figure}
-
-
-\begin{figure*}
-\centering
-  \includegraphics[width=0.45\textwidth,trim=2.5cm 3cm 2cm 3cm,clip]{./figures/pos0274}
-  \includegraphics[width=0.45\textwidth,trim=2.5cm 3cm 2cm 3cm,clip]{./figures/pos0285}
-  \includegraphics[width=0.45\textwidth,trim=2.5cm 3cm 2cm 3cm,clip]{./figures/pos0323}
-  \includegraphics[width=0.45\textwidth,trim=2.5cm 3cm 2cm 3cm,clip]{./figures/pos0394} % 388
-  \includegraphics[width=0.45\textwidth,trim=2.5cm 3cm 2cm 3cm,clip]{./figures/pos0435}
-  \includegraphics[width=0.45\textwidth,trim=2.5cm 3cm 2cm 3cm,clip]{./figures/pos0441}
-  \caption{Reconstructions of actual gameplay in a five-person group
-    illustrating both failed exploration leading to intelligent
-    copying and successful exploration leading to collective
-    movement. Colors indicate the individuals' scores, with red being
-    higher and orange/yellow being lower.  The participant labels indicate
-    both participant IDs and also the participant states our feature extraction
-    procedure inferred.  Other annotations are provided to give a
-    sense for the game dynamics.  At $34$ seconds, in the first panel,
-    most of the group has converged on exploiting a particular area
-    while one individual is exploring independently.  To the right, at
-    36 seconds, the exploring individual appears to have failed to
-    find a good location and ceases exploring by copying the group.
-    At 40 seconds, the final panel in the first row, the score field
-    has shifted and some of the group begins exploring while others
-    continue to exploit.  By 49 seconds, the first panel in the second
-    row, one of the exploring individuals found a good location, and
-    other participants have begun to move towards that individual.  At 54
-    seconds, the entire group is exploiting the new area.  In the
-    final panel, at 55 seconds, the background has shifted enough
-    again that one of the individuals begins to explore.}
-  \label{fig:example}
-\end{figure*}
-
-
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.9\textwidth]{./figures/interface}
-  \caption{Screenshots of the Experiment 3 interface.  The
-    score displayed corresponds to the value of the score field at the
-    location that the participant's avatar is occupying.}
-  \label{fig:exp3_interface}
-\end{figure}
 
 \end{document}
